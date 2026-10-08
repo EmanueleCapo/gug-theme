@@ -186,3 +186,22 @@
     text-align: start;
   }
 }
+
+/* Pagine costruite con i pattern GUG ------------------------------------
+   Le sezioni vanno a tutta larghezza (il layout "constrained" di Gutenberg
+   le limiterebbe alla content-size) e allineano il contenuto al contenitore
+   di Blocksy (90vw, max --theme-normal-container-max-width). */
+.gug-redesign {
+  --gug-container: min(var(--theme-normal-container-max-width, 1290px), 90vw);
+  // Ridichiarata: altrimenti erediterebbe il valore calcolato su :root con il vecchio --gug-container
+  --gug-inline: max(var(--gug-gutter), calc((100% - var(--gug-container)) / 2));
+}
+
+body.gug-pattern-page { background: var(--gug-white); }
+
+.gug-pattern-page .entry-content > .gug-hero,
+.gug-pattern-page .entry-content > .gug-section {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}

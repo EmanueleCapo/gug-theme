@@ -70,3 +70,9 @@ Menu: `main` (id 2, menu_1), `settori` (id 3, menu_2), `mobile` (id 29). Homepag
 | Formazione UG nu / pn / sy | 1553 / 1730 / 1768 |
 
 Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
+
+## Bozze create (fase 3+)
+
+| Pagina | Vecchia | Bozza nuova | Stato |
+|---|---|---|---|
+| Presentazione | 2 | 5818 | verificata desktop/mobile, blocchi validi |
