@@ -1,41 +1,60 @@
 /* gug-print.css — stampa "Composizione della Giuria" (A4)
-   In WP: wp_enqueue_style( 'gug-print', ..., [], null, 'print' ) solo su single-designazioni */
+   Caricato solo su single-designazioni, media="print".
+   Il vecchio CSS del tema (css/style.min.css) in stampa forza "* { font-size: 14px !important }":
+   per questo le dimensioni qui sono !important. */
 
-@page { size: A4; margin: 18mm 16mm; }
+@page { size: A4; margin: 14mm 16mm 16mm; }
 
-#header, #footer, .ct-header, .ct-footer, #offcanvas,
-.gug-hero, .gug-print-link, .gug-logos { display: none !important; }
+#header, #footer, .ct-header, .ct-footer, #offcanvas, #wpadminbar,
+.gug-hero, .gug-print-button, .gug-logos { display: none !important; }
 
+html { margin-top: 0 !important; }
 body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial, sans-serif; }
 .gug-section { padding: 0 !important; }
 
+/* Intestazione documento */
 .gug-giuria__print-header {
   display: block !important;
-  text-align: center; border-bottom: 2px solid #000; padding-bottom: 10pt; margin-bottom: 16pt;
+  text-align: center; border-bottom: 2pt solid #000; padding-bottom: 9pt; margin-bottom: 14pt;
 }
-.gug-giuria__org { margin: 0; font-size: 9.5pt; font-weight: 700; letter-spacing: .05em; line-height: 1.45; }
-.gug-giuria__doc-title { margin: 8pt 0 0; font: 800 18pt/1.05 "Barlow Condensed", Arial, sans-serif; text-transform: uppercase; }
+.gug-giuria__print-logo { display: block; width: 17mm; height: auto; margin: 0 auto 5pt; }
+.gug-giuria__org { margin: 0; font-size: 9pt !important; font-weight: 700; letter-spacing: .06em; line-height: 1.4; text-transform: uppercase; }
+.gug-giuria__doc-title { margin: 7pt 0 0; font: 800 20pt/1 "Barlow Condensed", Arial, sans-serif; font-size: 20pt !important; letter-spacing: .02em; text-transform: uppercase; }
 
+/* Tabelle una sotto l'altra, ciascuna con la propria fascia titolo */
 .gug-giuria__layout { display: block !important; }
-.gug-giuria__layout > * + * { margin-top: 16pt; }
-.gug-heading { display: none; }
+.gug-giuria__layout > * + * { margin-top: 14pt; }
+.gug-giuria__heading { display: block; min-height: 0; margin: 0; }
+.gug-heading {
+  display: block !important; margin: 0 !important; padding: 5pt 9pt;
+  background: #1f2d3d !important; color: #fff !important;
+  font: 800 11pt/1.2 "Barlow Condensed", Arial, sans-serif; font-size: 11pt !important;
+  letter-spacing: .08em; text-transform: uppercase;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
 
-.gug-datalist { border: 1px solid #8a96a6; border-bottom: 0; }
+.gug-datalist { margin: 0; border: 1pt solid #8a96a6; border-top: 0; }
 .gug-datalist__row {
-  display: grid !important; grid-template-columns: 52mm 1fr !important; gap: 0 !important;
-  padding: 0 !important; border-bottom: 1px solid #8a96a6 !important;
+  display: grid !important; grid-template-columns: 58mm 1fr !important; gap: 0 !important;
+  padding: 0 !important; border-bottom: 1pt solid #b9c2cd !important;
 }
-.gug-datalist__row--head { display: grid !important; }
+.gug-datalist__row:last-child { border-bottom: 0 !important; }
 .gug-datalist__row dt, .gug-datalist__row dd {
-  padding: 5pt 8pt; font-size: 10.5pt !important; color: #000 !important; margin: 0;
+  margin: 0; padding: 6pt 9pt !important; color: #000 !important; background: none !important; border-radius: 0 !important;
 }
-.gug-datalist__row dt { font-weight: 700; background: #eef1f4; border-right: 1px solid #8a96a6; }
-.gug-datalist__row--head dt, .gug-datalist__row--head dd { background: #dde3ea; font-size: 9pt !important; letter-spacing: .06em; text-transform: uppercase; }
-.gug-datalist__names li + li { margin-top: 1pt; }
-.gug-datalist, .gug-datalist__row { break-inside: avoid; }
+.gug-datalist__row dt { font-size: 10.5pt !important; font-weight: 700; background: #eef1f4 !important; border-right: 1pt solid #b9c2cd; }
+.gug-datalist__row dd { font-size: 11pt !important; font-weight: 600; }
+.gug-datalist__row--head { display: grid !important; }
+.gug-datalist__row--head dt, .gug-datalist__row--head dd {
+  background: #dde3ea !important; font-size: 8.5pt !important; letter-spacing: .08em; text-transform: uppercase;
+}
+.gug-datalist__names li { font-size: 11pt !important; font-weight: 500; }
+.gug-datalist__names li + li { margin-top: 2pt; }
+.gug-datalist__row dt, .gug-datalist__row--head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.gug-datalist__row { break-inside: avoid; }
 
-/* Il vecchio CSS del tema (css/style.min.css) in stampa forza "* { font-size: 14px !important }":
-   le dimensioni della stampa nuova devono essere !important per prevalere */
-.gug-giuria__org { font-size: 9.5pt !important; }
-.gug-giuria__doc-title { font-size: 18pt !important; }
-.gug-datalist__names li { font-size: 10.5pt !important; }
+/* Piè di pagina del documento */
+.gug-giuria__print-footer {
+  display: block !important; margin: 16pt 0 0; padding-top: 6pt; border-top: 1pt solid #b9c2cd;
+  font-size: 8.5pt !important; color: #5c6a80; text-align: right;
+}

@@ -49,6 +49,11 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 ### Dopo qualche giorno senza problemi
 - [ ] Eliminare le pagine vecchie.
 - [ ] Rimuovere moduli e shortcode vecchi, SASS e CSS vecchi, Owl Carousel se non più usato.
-- [ ] Rimuovere la logica "solo utenti loggati" e rinominare i file nuovi con nomi definitivi.
+- [ ] Rimuovere la logica "solo utenti loggati" (`gug_redesign_is_active()`) e rinominare i file nuovi con nomi definitivi:
+  - `modules/redesign-setup.php` → `modules/theme-assets.php`
+  - `modules/redesign-pages.php` → `modules/page-options.php`
+  - `modules/redesign-header-footer.php` → rimosso (header/footer configurati nel Customizer)
+  - `sass-gug/` → `sass/` (dopo aver eliminato il SASS vecchio), `_blocksy-adapt.scss` → `_blocksy.scss` unito
+  - prefisso funzioni `gug_redesign_*` → `gug_*`
 - [ ] Disattivare/eliminare Essential Blocks e Qubely se non più usati da nessun contenuto.
 - [ ] Valutare informativa privacy/cookie (non prevista nel mockup).

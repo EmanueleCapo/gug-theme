@@ -1,26 +1,47 @@
 /* 12. Composizione della Giuria — single-designazioni ------------------- */
-.gug-giuria__print-header { display: none; }
+.gug-giuria__print-header,
+.gug-giuria__print-footer { display: none; }
 .gug-giuria__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
 @media (max-width: 999.98px) { .gug-giuria__layout { grid-template-columns: 1fr; gap: 40px; } }
+
+/* Titolo della colonna con il pulsante di stampa a destra */
+.gug-giuria__heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; margin-bottom: 16px; }
+.gug-giuria__heading .gug-heading { margin: 0; }
+
+.gug-print-button {
+  appearance: none; flex: 0 0 auto; display: inline-grid; place-items: center;
+  width: 44px; height: 44px; min-height: 0; padding: 0; border: 0; border-radius: 14px;
+  background: var(--gug-surface); color: var(--gug-blue-700); box-shadow: none; cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+.gug-print-button::before {
+  content: ""; width: 20px; height: 20px; background: currentColor;
+  -webkit-mask: var(--gug-i-print) center / contain no-repeat; mask: var(--gug-i-print) center / contain no-repeat;
+}
+.gug-print-button:hover,
+.gug-print-button:focus-visible { background: var(--gug-blue-700); color: var(--gug-white); }
 
 .gug-datalist { margin: 0; border-top: 2px solid var(--gug-ink); }
 .gug-datalist__row {
   display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 20px;
   padding: 13px 0; border-bottom: 1px solid var(--gug-line);
 }
-.gug-datalist__row dt { font-size: 15px; font-weight: 700; color: var(--gug-ink-2); }
+/* Scelta cliente: etichette a 1em (16px) */
+.gug-datalist__row dt { font-size: var(--gug-fs-body); font-weight: 700; color: var(--gug-ink-2); }
 .gug-datalist__row dd { margin: 0; font-size: var(--gug-fs-body); font-weight: 600; }
 .gug-datalist__row--head dt,
 .gug-datalist__row--head dd { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gug-muted); }
 .gug-datalist__names { list-style: none; margin: 0; padding: 0; font-weight: 500; }
 .gug-datalist__names li + li { margin-top: 5px; }
-@media (max-width: 689.98px) {
-  .gug-datalist__row { grid-template-columns: 1fr; gap: 4px; }
-  .gug-datalist__row--head { display: none; }
-}
 
-.gug-print-link { margin-top: 26px; color: var(--gug-blue-700); font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 9px; }
-.gug-print-link::before {
-  content: ""; width: 18px; height: 18px; background: currentColor;
-  -webkit-mask: var(--gug-i-print) center / contain no-repeat; mask: var(--gug-i-print) center / contain no-repeat;
+/* Mobile: etichetta come fascia con sfumatura grigia, valore sotto con lo stesso rientro */
+@media (max-width: 689.98px) {
+  .gug-datalist { border-top: 0; }
+  .gug-datalist__row { grid-template-columns: 1fr; gap: 6px; padding: 0 0 14px; border-bottom: 0; }
+  .gug-datalist__row--head { display: none; }
+  .gug-datalist__row dt {
+    padding: 7px 12px; border-radius: 8px;
+    background: linear-gradient(90deg, var(--gug-surface) 0%, var(--gug-surface) 35%, rgba(242, 245, 247, 0) 100%);
+  }
+  .gug-datalist__row dd { padding-inline: 12px; }
 }

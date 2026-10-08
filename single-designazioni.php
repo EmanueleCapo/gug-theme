@@ -12,7 +12,7 @@ if ( function_exists( 'gug_redesign_is_active' ) && gug_redesign_is_active() ) {
 	get_header();
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'parts/single-designazione/redesign' );
+		get_template_part( 'parts/single-designazione/composizione-giuria' );
 	}
 	get_footer();
 	return;

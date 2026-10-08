@@ -39,13 +39,17 @@ if ( in_array( $gug_sector, array( 'nu', 'sa' ), true ) ) {
 
 	<div class="gug-section">
 		<header class="gug-giuria__print-header">
+			<img class="gug-giuria__print-logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/logo-gug.png' ); ?>" alt="">
 			<p class="gug-giuria__org"><?php esc_html_e( 'FEDERAZIONE ITALIANA NUOTO', 'gugpiemonte' ); ?><br><?php esc_html_e( "Gruppo Ufficiali Gara Piemonte e Valle d'Aosta", 'gugpiemonte' ); ?></p>
 			<p class="gug-giuria__doc-title"><?php esc_html_e( 'Composizione della Giuria', 'gugpiemonte' ); ?></p>
 		</header>
 
 		<div class="gug-giuria__layout">
 			<section class="gug-giuria__info">
-				<h2 class="gug-heading gug-heading--sm"><?php echo $gug_is_pn ? esc_html__( 'Dati della partita', 'gugpiemonte' ) : esc_html__( 'Manifestazione', 'gugpiemonte' ); ?></h2>
+				<div class="gug-giuria__heading">
+					<h2 class="gug-heading gug-heading--sm"><?php echo $gug_is_pn ? esc_html__( 'Dati della partita', 'gugpiemonte' ) : esc_html__( 'Manifestazione', 'gugpiemonte' ); ?></h2>
+					<button type="button" class="gug-print-button" onclick="window.print()" title="<?php esc_attr_e( 'Stampa la designazione', 'gugpiemonte' ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Stampa la designazione', 'gugpiemonte' ); ?></span></button>
+				</div>
 				<dl class="gug-datalist">
 					<div class="gug-datalist__row">
 						<dt><?php echo $gug_is_pn ? esc_html__( 'Nome Partita', 'gugpiemonte' ) : esc_html__( 'Nome manifestazione', 'gugpiemonte' ); ?></dt>
@@ -58,12 +62,13 @@ if ( in_array( $gug_sector, array( 'nu', 'sa' ), true ) ) {
 						</div>
 					<?php endforeach; ?>
 				</dl>
-				<a class="gug-print-link" href="javascript:window.print()"><?php esc_html_e( 'Stampa la designazione', 'gugpiemonte' ); ?></a>
 			</section>
 
 			<?php if ( ! empty( $gug_jury ) ) : ?>
 				<section class="gug-giuria__crew">
-					<h2 class="gug-heading gug-heading--sm"><?php esc_html_e( 'Convocati', 'gugpiemonte' ); ?></h2>
+					<div class="gug-giuria__heading">
+						<h2 class="gug-heading gug-heading--sm"><?php esc_html_e( 'Convocati', 'gugpiemonte' ); ?></h2>
+					</div>
 					<dl class="gug-datalist">
 						<div class="gug-datalist__row gug-datalist__row--head">
 							<dt><?php esc_html_e( 'Mansioni', 'gugpiemonte' ); ?></dt>
@@ -92,5 +97,7 @@ if ( in_array( $gug_sector, array( 'nu', 'sa' ), true ) ) {
 				</section>
 			<?php endif; ?>
 		</div>
+
+		<p class="gug-giuria__print-footer">www.gugpiemonte.it — <?php echo esc_html( sprintf( /* translators: %s: data di stampa. */ __( 'stampato il %s', 'gugpiemonte' ), wp_date( 'd/m/Y' ) ) ); ?></p>
 	</div>
 </article>
