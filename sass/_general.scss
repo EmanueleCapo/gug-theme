@@ -1,0 +1,199 @@
+.regolamenti-nuoto {
+    a {
+        text-decoration: none !important;
+    }
+}
+
+.ct-footer {
+    #media_image-3 {
+        img {
+            width: 140px;
+        }
+    }
+}
+
+/*.partner-carousel-wrapper {
+    margin-left: 0 !important;
+    .item {
+        max-height: 165px;
+        object-fit: cover;
+        @media screen and (max-width: 425px) {
+            max-height: 200px;
+            img {
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}*/
+
+// Accordion Regole Generali
+.qubely-accordion-body {
+    ul {
+        margin-bottom: 0 !important;
+    }
+}
+.qubely-accordion-panel-handler-label,
+.qubely-accordion-icon {
+    color: white !important;
+}
+
+// Accordion Calendari
+.accordion-calendari {
+    .wp-block-qubely-accordion-item:nth-child(1) {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(26, 166, 88, 0.8) !important;
+        }
+    }
+    .wp-block-qubely-accordion-item:nth-child(2) {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(255, 87, 34, 0.8) !important;
+        }
+    }
+    .wp-block-qubely-accordion-item:nth-child(3) {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(199, 163, 0, 0.8) !important;
+        }
+    }
+    .wp-block-qubely-accordion-item:nth-child(4) {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(183, 28, 28, 0.8) !important;
+        }
+    }
+    .wp-block-qubely-accordion-item:nth-child(5) {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(149, 117, 205, 0.8) !important;
+        }
+    }
+}
+
+// Accordion Regolamenti
+.accordion-regolamenti-nuoto {
+    .wp-block-qubely-accordion-item {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(26, 166, 88, 0.8) !important;
+        }
+    }
+}
+.accordion-regolamenti-pallanuoto {
+    .wp-block-qubely-accordion-item {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(255, 87, 34, 0.8) !important;
+        }
+    }
+}
+.accordion-regolamenti-salvamento {
+    .wp-block-qubely-accordion-item {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(199, 163, 0, 0.8) !important;
+        }
+    }
+}
+.accordion-regolamenti-sincronizzato {
+    .wp-block-qubely-accordion-item {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(183, 28, 28, 0.8) !important;
+        }
+    }
+}
+.accordion-regolamenti-tuffi {
+    .wp-block-qubely-accordion-item {
+        .qubely-accordion-panel {
+            border: 4px solid white !important;
+            background-color: rgba(149, 117, 205, 0.8) !important;
+        }
+    }
+}
+
+.page-title {
+    //font-size: clamp(1.875em, -1.25em + 13.33vw, 3.75em) !important;
+    font-size: clamp(1.563em, -1.147em + 10.2vw, 3.75em) !important;
+    @media screen and (max-width: 425px) {
+        font-size: 25px !important;
+    }
+}
+
+.only-desktop {
+    @media screen and (max-width: 819px) {
+        display: none;
+    }
+}
+.only-cell {
+    @media screen and (min-width: 820px) {
+        display: none;
+    }
+}
+
+// Partner Grid
+.partner-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5em;
+    align-items: center;
+    justify-items: center;
+    .item {
+        max-height: 100px;
+        img {
+            width: 100%;
+            max-height: 100px;
+        }
+    }
+}
+.partner-carousel-wrapper {
+    margin-left: 0 !important;
+    .owl-stage {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        .item {
+            max-height: 100px !important;
+            object-fit: cover;
+            img {
+                max-height: 100px !important;
+                object-fit: contain;
+            }
+            @media screen and (max-width: 599px) {
+                max-height: 100px !important;
+                img {
+                    max-width: 75%;
+                    object-fit: contain;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+// Footer top row
+.ct-footer {
+    [data-row="top"] {
+        .ct-container {
+            padding-bottom: 0 !important;
+        }
+    }
+}
+
+// Archive Settori
+body.tax-settori {
+    .ct-no-results {
+        background-color: white;
+        padding: 40px;
+        .entry-content {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}
+
+.skip-link {
+    display: none !important; 
+}

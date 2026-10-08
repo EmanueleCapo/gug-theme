@@ -1,0 +1,51 @@
+.only-print {
+    display: none !important;
+}
+@media print {
+    /*article.designazioni {
+        transform: scale(0.75);
+    }*/
+    * {
+        font-size: 14px !important;
+    }
+    @page {
+        //size: 210mm 297mm; /* portrait */
+        /* you can also specify margins here: */
+        //margin: 25mm;
+        //margin-right: 45mm; /* for compatibility with both A4 and Letter */
+    }
+    .noprint
+    //footer,
+    //.custom-hero-section
+    {
+        display: none !important;
+    }
+    /*header > *:not(h1.page-title) {
+        display: block !important;
+    }*/
+    /*header.ct-header,
+    header.entry-header a {
+        display: none !important;
+    }*/
+
+    /*.page-break {
+        display: block;
+        page-break-before: always;
+    }*/
+    .single-designazioni {
+        background-color: white !important;
+        .ct-container-full {
+            padding: 0 !important;
+        }
+        article.designazioni {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .only-print {
+        display: block !important;
+    }
+    table.only-print {
+        display: table !important;
+    }
+}

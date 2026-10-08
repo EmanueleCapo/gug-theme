@@ -1,0 +1,22 @@
+/*
+Theme Name:   gugpiemonte
+Description:  Scrivi qui una breve descrizione del tuo child theme
+Author:       emanuele
+Author URL:   Scrivi qui l'URL  del blog / sito web dell'autore
+Template:     blocksy
+Version:      1.0.1
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  gugpiemonte
+*/
+
+/* Scrivi qui il tuo foglio di stile personalizzato */
+
+@import "utils";
+@import "general";
+@import "menu-settori";
+@import "home";
+@import "404";
+@import "listing-designazioni";
+@import "single-designazione";
+@import "print";

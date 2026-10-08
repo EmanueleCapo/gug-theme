@@ -1,0 +1,158 @@
+.home {
+    /* BOX MANIFESTAZIONI SETTIMANA */
+    .label {
+        padding: 5px 10px;
+        margin-bottom: 0;
+    }
+    .header-cover {
+        //z-index: -1;
+        .wp-block-cover__inner-container {
+            max-width: var(--theme-normal-container-max-width);
+        }
+        @media screen and (min-width: 769px) {
+            .wp-block-cover__inner-container {
+                margin-top: 100px;
+            }
+        }
+        .designazioni-wrapper {
+            background-color: $background-blu;
+            border-top: 1px solid white;
+            display: flex;
+            margin-top: 0;
+            .entries-box {
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                width: 25%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin: 10px 0 10px 10px;
+                padding: 7px;
+                min-height: 150px;
+                &:last-of-type {
+                    margin-right: 10px;
+                }
+                .settore-name {
+                    border-bottom: 1px dashed #dddddd;
+                    font-weight: bold;
+                    padding-bottom: 3px;
+                    margin-bottom: 3px;
+                }
+                .man-date,
+                .no-man {
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: black;
+                }
+                .man-title {
+                    font-size: 14px;
+                    color: black;
+                }
+            }
+            .box-nu {
+                .settore-name {
+                    color: $nuoto;
+                }
+            }
+            .box-pn {
+                .settore-name {
+                    color: $pallanuoto;
+                }
+            }
+            .box-sa {
+                .settore-name {
+                    color: $salvamento;
+                }
+            }
+            .box-sy {
+                .settore-name {
+                    color: $sincronizzato;
+                }
+            }
+            .box-tu {
+                .settore-name {
+                    color: $tuffi;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                display: block;
+                padding-bottom: 10px;
+                .entries-box {
+                    width: calc(100% - 20px);
+                    min-height: auto;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // CAROSELLO
+    .block-carousel {
+        @media screen and (min-width: 769px) {
+            margin-top: -80px;
+        }
+        z-index: 10;
+        position: relative;
+        .item {
+            max-height: 550px;
+            img {
+                max-height: 550px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    // BOX DELLE NEWS
+    .block-news {
+        /*@media screen and (min-width: 769px) {
+            margin-top: -80px;
+        }
+        z-index: 10;
+        position: relative;*/
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                a {
+                    display: flex;
+                    align-items: center;
+                    flex-basis: 100% !important;
+                    &.latest-post::before {
+                        content: "";
+                        background-image: url(/wp-content/uploads/2022/10/icons.svg);
+                        background-size: 296.375em 305.6875em;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height: 1.96875em;
+                        width: 1.96875em;
+                        font-size: 30px;
+                        padding-right: 55px;
+                    }
+                    &.general::before {
+                        background-position: -59.6375em -72.5625em;
+                    }
+                    &.nu::before {
+                        //background-position: -171.8125em -178.5625em;
+                        background-position: -171.5125em -178.1625em;
+                    }
+                    &.pn::before {
+                        background-position: -189.85em -199.0125em;
+                    }
+                    &.sa::before {
+                        background-position: -214.1em -223.4125em;
+                    }
+
+                    &.sy::before {
+                        background-position: -232.85em -243.7625em;
+                    }
+                    &.tu::before {
+                        background-position: -266.5375em -275.1625em;
+                    }
+                }
+            }
+        }
+    }
+}

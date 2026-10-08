@@ -1,0 +1,11 @@
+
+.icon-play:before { content: '\e800'; } /* '' */
+.icon-right:before { content: '\e801'; } /* '' */
+.icon-print:before { content: '\e802'; } /* '' */
+.icon-users:before { content: '\e803'; } /* '' */
+.icon-book:before { content: '\e804'; } /* '' */
+.icon-youtube:before { content: '\f16a'; } /* '' */
+.icon-pdf:before { content: '\f1c1'; } /* '' */
+.icon-word:before { content: '\f1c2'; } /* '' */
+.icon-excel:before { content: '\f1c3'; } /* '' */
+.icon-pp:before { content: '\f1c4'; } /* '' */

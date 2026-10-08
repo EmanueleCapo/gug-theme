@@ -1,0 +1,29 @@
+/* Solo anteprima: replica minima del layout che Blocksy fornisce di suo. NON va nel tema. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
+img { max-width: 100%; }
+.ct-container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+.ct-header .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
+.ct-header [data-row="top"] .ct-container { height: 52px; display: flex; align-items: center; }
+.ct-header [data-row="middle"] .ct-container { height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.ct-header [data-row="middle"] .menu { gap: 28px; }
+.site-branding { display: flex; align-items: center; gap: 14px; }
+.default-logo { height: 62px; width: auto; display: block; }
+.site-description { margin: 4px 0 0; }
+.ct-header-end { display: flex; align-items: center; gap: 30px; }
+.ct-header-cta .ct-button { display: inline-flex; align-items: center; }
+.ct-header-trigger { border: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+[data-device="mobile"] { display: none; }
+.ct-footer [data-row="middle"] .ct-container { padding-block: 52px 44px; }
+.ct-footer [data-row="bottom"] .ct-container { padding-block: 20px; }
+@media (max-width: 999.98px) {
+  [data-device="desktop"] { display: none; }
+  [data-device="mobile"] { display: block; }
+  .ct-container { padding: 0 16px; }
+  .ct-header [data-row="middle"] .ct-container { height: 72px; }
+  .default-logo { height: 44px; }
+  .ct-header .site-title { font-size: 17px; }
+  .ct-header .site-description { font-size: 10.5px; }
+  .ct-footer [data-row="middle"] .ct-container { padding-block: 28px 22px; }
+}

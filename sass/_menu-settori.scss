@@ -1,0 +1,184 @@
+.menu-nu {
+    a {
+        &::after,
+        &::before {
+            height: 3px !important;
+            background-color: $nuoto !important;
+        }
+        &:hover,
+        &:active {
+            color: $nuoto !important;
+            svg {
+                fill: $nuoto !important;
+            }
+        }
+    }
+    &.ct-active {
+        a:not(.sub-menu a) {
+            color: $nuoto !important;
+            svg {
+                fill: $nuoto !important;
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $nuoto !important;
+            }
+        }
+    }
+    &[class*="current-menu-"] > a,
+    &[class*="current-menu-"] > .ct-sub-menu-parent {
+        color: $nuoto !important;
+        svg {
+            fill: $nuoto !important;
+        }
+    }
+}
+
+.menu-pn {
+    a {
+        &::after,
+        &::before {
+            height: 3px !important;
+            background-color: $pallanuoto !important;
+        }
+        &:hover,
+        &:active {
+            color: $pallanuoto !important;
+            svg {
+                fill: $pallanuoto !important;
+            }
+        }
+    }
+    &.ct-active {
+        a:not(.sub-menu a) {
+            color: $pallanuoto !important;
+            svg {
+                fill: $pallanuoto !important;
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $pallanuoto !important;
+            }
+        }
+    }
+    &[class*="current-menu-"] > a,
+    &[class*="current-menu-"] > .ct-sub-menu-parent {
+        color: $pallanuoto !important;
+        svg {
+            fill: $pallanuoto !important;
+        }
+    }
+}
+
+.menu-sa {
+    a {
+        &::after,
+        &::before {
+            height: 3px !important;
+            background-color: $salvamento !important;
+        }
+        &:hover,
+        &:active {
+            color: $salvamento !important;
+            svg {
+                fill: $salvamento !important;
+            }
+        }
+    }
+    &.ct-active {
+        a:not(.sub-menu a) {
+            color: $salvamento !important;
+            svg {
+                fill: $salvamento !important;
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $salvamento !important;
+            }
+        }
+    }
+    &[class*="current-menu-"] > a,
+    &[class*="current-menu-"] > .ct-sub-menu-parent {
+        color: $salvamento !important;
+        svg {
+            fill: $salvamento !important;
+        }
+    }
+}
+
+.menu-sy {
+    a {
+        &::after,
+        &::before {
+            height: 3px !important;
+            background-color: $sincronizzato !important;
+        }
+        &:hover,
+        &:active {
+            color: $sincronizzato !important;
+            svg {
+                fill: $sincronizzato !important;
+            }
+        }
+    }
+    &.ct-active {
+        a:not(.sub-menu a) {
+            color: $sincronizzato !important;
+            svg {
+                fill: $sincronizzato !important;
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $sincronizzato !important;
+            }
+        }
+    }
+    &[class*="current-menu-"] > a,
+    &[class*="current-menu-"] > .ct-sub-menu-parent {
+        color: $sincronizzato !important;
+        svg {
+            fill: $sincronizzato !important;
+        }
+    }
+}
+
+.menu-tu {
+    a {
+        &::after,
+        &::before {
+            height: 3px !important;
+            background-color: $tuffi !important;
+        }
+        &:hover,
+        &:active {
+            color: $tuffi !important;
+            svg {
+                fill: $tuffi !important;
+            }
+        }
+    }
+    &.ct-active {
+        a:not(.sub-menu a) {
+            color: $tuffi !important;
+            svg {
+                fill: $tuffi !important;
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $tuffi !important;
+            }
+        }
+    }
+    &[class*="current-menu-"] > a,
+    &[class*="current-menu-"] > .ct-sub-menu-parent {
+        color: $tuffi !important;
+        svg {
+            fill: $tuffi !important;
+        }
+    }
+}

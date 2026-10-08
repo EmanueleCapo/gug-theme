@@ -1,0 +1,225 @@
+/* Casi dei settori */
+.designazioni-nuoto,
+.designazioni-pallanuoto,
+.designazioni-salvamento,
+.designazioni-artistico,
+.designazioni-tuffi {
+    article {
+        background-color: white;
+        padding: 40px !important;
+        max-width: $max-width !important;
+        margin: 0 auto !important;
+        @media screen and (max-width: 689px) {
+            padding: 20px !important;
+        }
+    }
+}
+
+.listing-designazioni {
+    border: 3px solid;
+    text-align: center;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    .head {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+    .row {
+        border-top: 1px solid;
+        .col-giuria,
+        .col-regolamento {
+            padding: 0;
+        }
+    }
+    .icon {
+        font-size: 30px;
+    }
+    &.mobile {
+        .first-row,
+        .first-row-pn,
+        .second-row,
+        .third-row {
+            border-bottom: 1px solid;
+        }
+        .last-row:not(:last-of-type) {
+            border-bottom: 3px solid;
+        }
+        .first-row-pn,
+        .third-row,
+        .last-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            .first-column {
+                border-right: 1px solid;
+            }
+        }
+        .first-column,
+        .second-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    }
+}
+
+.designazioni-nuoto {
+    .listing-designazioni {
+        border-color: $nuoto;
+        .head {
+            color: $nuoto;
+        }
+        .row {
+            border-color: $nuoto;
+        }
+        .col-data,
+        .col-citta,
+        .col-giuria,
+        .col-regolamento,
+        .col-piscina,
+        .col-nome {
+            border-color: $nuoto;
+        }
+        .icon {
+            color: $nuoto;
+        }
+        &.mobile {
+            .first-row,
+            .second-row,
+            .third-row,
+            .last-row,
+            .first-column {
+                border-color: $nuoto;
+            }
+        }
+    }
+}
+.designazioni-pallanuoto {
+    .listing-designazioni {
+        border-color: $pallanuoto;
+        .head {
+            color: $pallanuoto;
+        }
+        .row {
+            border-color: $pallanuoto;
+        }
+        .col-data,
+        .col-citta,
+        .col-giuria,
+        .col-serie,
+        .col-piscina,
+        .col-nome {
+            border-color: $pallanuoto;
+        }
+        .icon {
+            color: $pallanuoto;
+        }
+        &.mobile {
+            .first-row-pn,
+            .second-row,
+            .third-row,
+            .last-row,
+            .first-column {
+                border-color: $pallanuoto;
+            }
+        }
+    }
+}
+
+.designazioni-salvamento {
+    .listing-designazioni {
+        border-color: $salvamento;
+        .head {
+            color: $salvamento;
+        }
+        .row {
+            border-color: $salvamento;
+        }
+        .col-data,
+        .col-citta,
+        .col-giuria,
+        .col-regolamento,
+        .col-piscina,
+        .col-nome {
+            border-color: $salvamento;
+        }
+        .icon {
+            color: $salvamento;
+        }
+        &.mobile {
+            .first-row,
+            .second-row,
+            .third-row,
+            .last-row,
+            .first-column {
+                border-color: $salvamento;
+            }
+        }
+    }
+}
+.designazioni-artistico {
+    .listing-designazioni {
+        border-color: $sincronizzato;
+        .head {
+            color: $sincronizzato;
+        }
+        .row {
+            border-color: $sincronizzato;
+        }
+        .col-data,
+        .col-citta,
+        .col-giuria,
+        .col-regolamento,
+        .col-piscina,
+        .col-nome {
+            border-color: $sincronizzato;
+        }
+        .icon {
+            color: $sincronizzato;
+        }
+        &.mobile {
+            .first-row,
+            .second-row,
+            .third-row,
+            .last-row,
+            .first-column {
+                border-color: $sincronizzato;
+            }
+        }
+    }
+}
+.designazioni-tuffi {
+    .listing-designazioni {
+        border-color: $tuffi;
+        .head {
+            color: $tuffi;
+        }
+        .row {
+            border-color: $tuffi;
+        }
+        .col-data,
+        .col-citta,
+        .col-giuria,
+        .col-regolamento,
+        .col-piscina,
+        .col-nome {
+            border-color: $tuffi;
+        }
+        .icon {
+            color: $tuffi;
+        }
+        &.mobile {
+            .first-row,
+            .second-row,
+            .third-row,
+            .last-row,
+            .first-column {
+                border-color: $tuffi;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+/* gug-print.css — stampa "Composizione della Giuria" (A4)
+   In WP: wp_enqueue_style( 'gug-print', ..., [], null, 'print' ) solo su single-designazioni */
+
+@page { size: A4; margin: 18mm 16mm; }
+
+#header, #footer, .ct-header, .ct-footer, #offcanvas,
+.gug-hero, .gug-print-link, .gug-logos { display: none !important; }
+
+body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial, sans-serif; }
+.gug-section { padding: 0 !important; }
+
+.gug-giuria__print-header {
+  display: block !important;
+  text-align: center; border-bottom: 2px solid #000; padding-bottom: 10pt; margin-bottom: 16pt;
+}
+.gug-giuria__org { margin: 0; font-size: 9.5pt; font-weight: 700; letter-spacing: .05em; line-height: 1.45; }
+.gug-giuria__doc-title { margin: 8pt 0 0; font: 800 18pt/1.05 "Barlow Condensed", Arial, sans-serif; text-transform: uppercase; }
+
+.gug-giuria__layout { display: block !important; }
+.gug-giuria__layout > * + * { margin-top: 16pt; }
+.gug-heading { display: none; }
+
+.gug-datalist { border: 1px solid #8a96a6; border-bottom: 0; }
+.gug-datalist__row {
+  display: grid !important; grid-template-columns: 52mm 1fr !important; gap: 0 !important;
+  padding: 0 !important; border-bottom: 1px solid #8a96a6 !important;
+}
+.gug-datalist__row--head { display: grid !important; }
+.gug-datalist__row dt, .gug-datalist__row dd {
+  padding: 5pt 8pt; font-size: 10.5pt !important; color: #000 !important; margin: 0;
+}
+.gug-datalist__row dt { font-weight: 700; background: #eef1f4; border-right: 1px solid #8a96a6; }
+.gug-datalist__row--head dt, .gug-datalist__row--head dd { background: #dde3ea; font-size: 9pt !important; letter-spacing: .06em; text-transform: uppercase; }
+.gug-datalist__names li + li { margin-top: 1pt; }
+.gug-datalist, .gug-datalist__row { break-inside: avoid; }

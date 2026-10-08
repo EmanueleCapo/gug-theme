@@ -1,0 +1,49 @@
+$main-blu: #4f81bd;
+$secondary-blu: #d3dfee;
+$border-blu: #7ba0cd;
+$background-blu: #95b3d7;
+
+/* COLORI SETTORI */
+$nuoto: #1aa658;
+$pallanuoto: #ff5722;
+$salvamento: #c7a300;
+$sincronizzato: #b71c1c;
+$tuffi: #9575cd;
+
+$max-width: 1290px;
+
+.no-style {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
+.blu-title {
+    color: #0000ff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.no-results {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+.entry-content {
+    ul:not(.wp-block-latest-posts) {
+        list-style: none !important;
+        li::before {
+            content: "\e801";
+            font-family: fontello;
+            color: #0000ff;
+            position: relative;
+            padding-right: 11px;
+            margin-left: -20px;
+            font-size: 18px;
+        }
+    }
+}

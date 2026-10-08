@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G.U.G. Piemonte e Valle d'Aosta — Proposta grafica</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #e9edf2; font-family: "Barlow", system-ui, sans-serif; color: #192a3d; }
+  a { color: #1559ed; } a:hover { color: #0000FF; }
+  .pv-bar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 32px; background: #ffffff; border-bottom: 1px solid #e1e8ed; }
+  .pv-bar__title { font: 800 24px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0; }
+  .pv-bar__controls { display: flex; align-items: center; gap: 16px; }
+  .pv-select { font: 600 15px "Barlow", sans-serif; color: #192a3d; padding: 9px 14px; border: 1px solid #e1e8ed; border-radius: 12px; background: #fff; }
+  .pv-switch { display: flex; padding: 4px; background: #f2f5f7; border-radius: 999px; }
+  .pv-switch__btn { font: 700 14px "Barlow", sans-serif; border: 0; background: transparent; color: #3c4a5e; padding: 9px 18px; border-radius: 999px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+  .pv-switch__btn[aria-pressed="true"] { background: #1559ed; color: #fff; }
+  .pv-stage { padding: 40px 32px 80px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+  .pv-frame { border: 0; background: #fff; display: block; border-radius: 18px; box-shadow: 0 30px 70px rgba(25,42,61,.18); width: 1440px; max-width: 100%; min-height: 800px; }
+  .pv-stage[data-mode="mobile"] .pv-frame { width: 390px; border-radius: 28px; }
+  .pv-print { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .pv-print[hidden] { display: none; }
+  .pv-print__label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #5c6a80; margin: 0; }
+  .pv-frame--print { width: 794px !important; border-radius: 0 !important; }
+  .pv-nav { display: flex; gap: 10px; }
+  .pv-nav__btn { font: 700 14px "Barlow", sans-serif; border: 1px solid #e1e8ed; background: #fff; color: #192a3d; width: 40px; height: 40px; border-radius: 12px; cursor: pointer; }
+  .pv-nav__btn:hover { border-color: #2872fa; color: #1559ed; }
+  @media (max-width: 900px) { .pv-bar { flex-wrap: wrap; padding: 12px 16px; } .pv-stage { padding: 20px 8px 60px; } }
+</style>
+</head>
+<body>
+<header class="pv-bar">
+  <p class="pv-bar__title">G.U.G. Piemonte — Proposta grafica</p>
+  <div class="pv-bar__controls">
+    <div class="pv-nav">
+      <button class="pv-nav__btn" id="prev" aria-label="Pagina precedente">‹</button>
+      <button class="pv-nav__btn" id="next" aria-label="Pagina successiva">›</button>
+    </div>
+    <select class="pv-select" id="page" aria-label="Pagina"></select>
+    <div class="pv-switch" role="group" aria-label="Dispositivo">
+      <button class="pv-switch__btn" data-mode="desktop" aria-pressed="true">Desktop</button>
+      <button class="pv-switch__btn" data-mode="mobile" aria-pressed="false">Mobile</button>
+    </div>
+  </div>
+</header>
+<main class="pv-stage" id="stage" data-mode="desktop">
+  <iframe class="pv-frame" id="frame" title="Anteprima pagina" scrolling="no"></iframe>
+  <div class="pv-print" id="print" hidden>
+    <p class="pv-print__label">Versione stampata A4</p>
+    <iframe class="pv-frame pv-frame--print" id="printframe" title="Anteprima di stampa" scrolling="no"></iframe>
+  </div>
+</main>
+<script>
+const PAGES = [
+  { label: 'Home', pattern: 'home' },
+  { label: 'Calendari 2025-2026', pattern: 'calendari' },
+  { label: 'Pagina settore — Nuoto', pattern: 'settore-nuoto' },
+  { label: 'Designazioni — Nuoto', pattern: 'designazioni-nuoto' },
+  { label: 'Composizione della Giuria — Nuoto', render: 'giuria-nu', print: true },
+  { label: 'Designazioni — Pallanuoto', pattern: 'designazioni-pallanuoto' },
+  { label: 'Composizione della Giuria — Pallanuoto', render: 'giuria-pn', print: true },
+  { label: 'Regolamenti — Nuoto', pattern: 'regolamenti-nuoto' },
+  { label: 'Modulistica — Nuoto', pattern: 'modulistica-nuoto' },
+  { label: 'Formazione Ufficiali Gara — Nuoto', pattern: 'formazione-nuoto' },
+  { label: 'Presentazione', pattern: 'presentazione' },
+  { label: 'Diventa un Ufficiale Gara', pattern: 'diventa-ufficiale-gara' }
+];
+const ROOT = '../gug-child/';
+const IMG = ROOT + 'assets/img';
+const cache = {};
+const get = async (p) => cache[p] ??= fetch(p).then(r => r.ok ? r.text() : `<!-- mancante: ${p} -->`);
+
+async function expand(html) {
+  html = html.replace(/<\?php[\s\S]*?\?>\s*/, '');
+  html = html.replace(/<\?php echo esc_url\( get_stylesheet_directory_uri\(\) \); \?>/g, ROOT.replace(/\/$/, ''));
+  html = html.replace(/\{\{img\}\}/g, IMG);
+  for (const m of [...html.matchAll(/<!-- wp:query (\{.*?\}) -->[\s\S]*?<!-- \/wp:query -->/g)]) {
+    const cls = JSON.parse(m[1]).className || '';
+    const inner = await get(ROOT + 'shortcodes/' + cls.split(' ')[0] + '.html');
+    html = html.replace(m[0], `<div class="wp-block-query ${cls}">${inner}</div>`);
+  }
+  for (const m of [...html.matchAll(/(?:<!-- wp:shortcode -->\s*)?\[(gug_\w+)([^\]]*)\](?:\s*<!-- \/wp:shortcode -->)?/g)]) {
+    const settore = (m[2].match(/settore="(\w+)"/) || [])[1];
+    const out = await get(ROOT + 'shortcodes/' + m[1] + (settore ? '-' + settore : '') + '.html');
+    html = html.replace(m[0], out.replace(/\{\{img\}\}/g, IMG));
+  }
+  for (const m of [...html.matchAll(/\[pattern:([\w-]+)\]/g)]) html = html.replace(m[0], await expand(await get(ROOT + 'patterns/' + m[1] + '.php')));
+  return html;
+}
+
+const FONTS = '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">';
+const HEAD = `<meta charset="utf-8"><meta name="viewport" content="width=device-width">${FONTS}
+<link rel="stylesheet" href="blocksy-stub.css"><link rel="stylesheet" href="${ROOT}assets/css/gug.css"><link rel="stylesheet" href="${ROOT}assets/css/gug-blocksy.css">`;
+const PRINT_CSS = `<link rel="stylesheet" href="${ROOT}assets/css/gug-print.css">`;
+
+async function build(i) {
+  if (window.__PREBUILT) {
+    if (!window.__IMGURL) {
+      window.__IMGURL = {};
+      for (const [n, uri] of Object.entries(window.__IMG || {})) window.__IMGURL[n] = URL.createObjectURL(await (await fetch(uri)).blob());
+    }
+    const sub = s => s && s.replace(/__IMG:([\w.-]+)__/g, (m, n) => window.__IMGURL[n] || '');
+    const d = window.__PREBUILT[i];
+    return { screen: sub(d.screen), print: sub(d.print) };
+  }
+  const p = PAGES[i];
+  const header = await get('blocksy-header.html');
+  const footer = await expand(await get('blocksy-footer.html'));
+  const main = p.pattern ? await expand(await get(ROOT + 'patterns/' + p.pattern + '.php')) : await get(ROOT + 'shortcodes/' + p.render + '.html');
+  return {
+    screen: `<!DOCTYPE html><html lang="it"><head>${HEAD}</head><body>${header}<main id="main" class="site-main"><div class="entry-content">${main}</div></main>${footer}</body></html>`,
+    print: p.print ? `<!DOCTYPE html><html lang="it"><head>${HEAD}${PRINT_CSS}<style>body{padding:18mm 16mm;box-sizing:border-box}</style></head><body>${main}</body></html>` : null
+  };
+}
+
+const stage = document.getElementById('stage');
+const frame = document.getElementById('frame');
+const pframe = document.getElementById('printframe');
+const printBox = document.getElementById('print');
+const select = document.getElementById('page');
+PAGES.forEach((p, i) => select.add(new Option(p.label, i)));
+
+function fit(f) {
+  try {
+    const d = f.contentDocument;
+    if (!d || d.URL === 'about:blank' || !d.body || !d.body.children.length) return;
+    const h = Math.ceil(d.body.getBoundingClientRect().height);
+    if (h > 0) f.style.height = h + 'px';
+  } catch (e) {}
+}
+[frame, pframe].forEach(f => f.addEventListener('load', () => {
+  fit(f);
+  try {
+    if (f._ro) f._ro.disconnect();
+    f._ro = new ResizeObserver(() => fit(f));
+    f._ro.observe(f.contentDocument.body);
+    f.contentDocument.fonts && f.contentDocument.fonts.ready.then(() => fit(f));
+  } catch (e) {}
+}));
+
+let current = -1;
+async function show(i) {
+  i = (i + PAGES.length) % PAGES.length;
+  current = i; select.value = i;
+  const d = await build(i);
+  frame.style.height = '800px';
+  frame.srcdoc = d.screen;
+  printBox.hidden = !d.print;
+  if (d.print) pframe.srcdoc = d.print;
+  try { localStorage.setItem('gug-preview', JSON.stringify({ page: i, mode: stage.dataset.mode })); } catch (e) {}
+  window.scrollTo({ top: 0 });
+}
+function setMode(m) {
+  stage.dataset.mode = m;
+  document.querySelectorAll('.pv-switch__btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
+  frame.style.height = '800px';
+  requestAnimationFrame(() => requestAnimationFrame(() => fit(frame)));
+  try { localStorage.setItem('gug-preview', JSON.stringify({ page: current, mode: m })); } catch (e) {}
+}
+document.querySelectorAll('.pv-switch__btn').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+select.addEventListener('change', () => show(+select.value));
+document.getElementById('prev').addEventListener('click', () => show(current - 1));
+document.getElementById('next').addEventListener('click', () => show(current + 1));
+document.addEventListener('keydown', e => { if (e.target === select) return; if (e.key === 'ArrowRight') show(current + 1); if (e.key === 'ArrowLeft') show(current - 1); });
+
+let saved = {}; try { saved = JSON.parse(localStorage.getItem('gug-preview') || '{}'); } catch (e) {}
+setMode(saved.mode === 'mobile' ? 'mobile' : 'desktop');
+show(Number.isInteger(saved.page) ? saved.page : 0);
+</script>
+</body>
+</html>

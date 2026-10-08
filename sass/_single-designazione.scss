@@ -1,0 +1,211 @@
+.sd-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sd-logo {
+        max-width: 150px;
+    }
+    .sd-intro {
+        text-align: center;
+    }
+    .sd-header-title {
+        @media screen and (max-width: 781px) {
+            text-align: center;
+        }
+    }
+}
+
+.sd-info-wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .wp-block-columns {
+        align-items: center;
+        margin-bottom: 10px !important;
+        display: flex;
+        justify-content: space-between;
+        /* @media screen and (max-width: 781px) {
+
+        }*/
+        .label {
+            width: 50%;
+        }
+        .value {
+            width: 50%;
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+        @media screen and (max-width: 599px) {
+            row-gap: 0 !important;
+            flex-direction: column;
+
+            .label {
+                text-align: center;
+            }
+            .label,
+            .value {
+                width: 100%;
+            }
+        }
+    }
+}
+table.sd-info-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    display: table;
+    .row {
+        .column {
+            width: 50%;
+            border: none;
+            padding: 7px 0;
+        }
+        vertical-align: middle;
+        .value {
+            text-align: center;
+            border-bottom: 2px solid #000;
+        }
+    }
+}
+
+.giuria-container {
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    .wp-block-columns {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            row-gap: 0 !important;
+            flex-direction: column;
+            &:nth-child(2) {
+                border-top: 2px solid $border-blu;
+            }
+        }
+        &.head {
+            text-align: center;
+            background-color: $main-blu;
+            color: white;
+            .mansioni,
+            .convocati {
+                width: 50%;
+            }
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+        .label {
+            width: 50%;
+            border-left: 2px solid $border-blu;
+            border-bottom: 2px solid $border-blu;
+            display: flex;
+            align-items: center;
+            strong {
+                padding-left: 7px;
+            }
+            @media screen and (max-width: 600px) {
+                justify-content: center;
+                text-align: center;
+                width: 100% !important;
+            }
+        }
+        .value {
+            width: 50%;
+            border-right: 2px solid $border-blu;
+            @media screen and (max-width: 600px) {
+                border-left: 2px solid $border-blu;
+                width: 100% !important;
+            }
+            &.pn {
+                .convocato {
+                    &:nth-child(2n + 2) {
+                        background-color: $secondary-blu !important;
+                    }
+                }
+            }
+            .convocato {
+                text-align: center;
+                border-bottom: 2px solid $border-blu;
+                &:nth-child(2n + 2) {
+                    background-color: white !important;
+                }
+            }
+        }
+        .wp-block-column:not(:first-child) {
+            margin-left: 0;
+        }
+        .wp-block-column:first-child {
+            border-right: 2px solid $border-blu;
+        }
+        &:nth-child(2n + 2) {
+            background-color: $secondary-blu;
+        }
+    }
+}
+
+table.giuria-container {
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    display: table;
+    margin-top: 30px;
+    .row {
+        &.head {
+            text-align: center;
+            background-color: $main-blu;
+            color: white;
+            border: 2px solid $border-blu;
+            .column {
+                text-align: center;
+            }
+        }
+        .column {
+            padding: 0;
+            width: 50%;
+        }
+        .label {
+            border-left: 2px solid $border-blu;
+            border-bottom: 2px solid $border-blu;
+            strong {
+                padding-left: 7px;
+            }
+        }
+        .value {
+            border-right: 2px solid $border-blu;
+            border-bottom: 2px solid $border-blu;
+            text-align: center;
+            &.pn {
+                .convocato {
+                    &:nth-child(2n + 2) {
+                        background-color: $secondary-blu !important;
+                    }
+                }
+            }
+            .convocato {
+                text-align: center;
+                border-bottom: 2px solid $border-blu;
+                &:nth-child(2n + 2) {
+                    background-color: white;
+                }
+            }
+        }
+        .column:first-child {
+            border-right: 2px solid $border-blu;
+        }
+        &:nth-child(2n + 2) {
+            background-color: $secondary-blu;
+        }
+    }
+}
+
+.print-link {
+    margin-top: 30px;
+    text-align: center;
+    .icon {
+        font-size: 30px;
+    }
+}
