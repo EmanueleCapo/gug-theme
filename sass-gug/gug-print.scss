@@ -33,16 +33,18 @@ body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
 
-.gug-datalist { margin: 0; border: 1pt solid #8a96a6; border-top: 0; }
+/* Linee sulle singole celle in px: i bordi in pt sulla riga della griglia vengono arrotondati e a volte spariscono */
+.gug-datalist { margin: 0; border: 1px solid #8a96a6; border-top: 0; }
 .gug-datalist__row {
   display: grid !important; grid-template-columns: 58mm 1fr !important; gap: 0 !important;
-  padding: 0 !important; border-bottom: 1pt solid #b9c2cd !important;
+  padding: 0 !important; border-bottom: 0 !important;
 }
-.gug-datalist__row:last-child { border-bottom: 0 !important; }
 .gug-datalist__row dt, .gug-datalist__row dd {
   margin: 0; padding: 6pt 9pt !important; color: #000 !important; background: none !important; border-radius: 0 !important;
+  border-bottom: 1px solid #b9c2cd;
 }
-.gug-datalist__row dt { font-size: 10.5pt !important; font-weight: 700; background: #eef1f4 !important; border-right: 1pt solid #b9c2cd; }
+.gug-datalist__row:last-child dt, .gug-datalist__row:last-child dd { border-bottom: 0; }
+.gug-datalist__row dt { font-size: 10.5pt !important; font-weight: 700; background: #eef1f4 !important; border-right: 1px solid #b9c2cd; }
 .gug-datalist__row dd { font-size: 11pt !important; font-weight: 600; }
 .gug-datalist__row--head { display: grid !important; }
 .gug-datalist__row--head dt, .gug-datalist__row--head dd {
@@ -53,8 +55,3 @@ body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial
 .gug-datalist__row dt, .gug-datalist__row--head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .gug-datalist__row { break-inside: avoid; }
 
-/* Piè di pagina del documento */
-.gug-giuria__print-footer {
-  display: block !important; margin: 16pt 0 0; padding-top: 6pt; border-top: 1pt solid #b9c2cd;
-  font-size: 8.5pt !important; color: #5c6a80; text-align: right;
-}
