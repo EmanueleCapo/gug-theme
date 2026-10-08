@@ -212,7 +212,8 @@ body.gug-pattern-page { background: var(--gug-white); }
 
 /* ...e toglie i pallini con !important: li ripristiniamo dove l'handoff li prevede */
 .gug-pattern-page .entry-content ul.gug-checklist,
-.gug-pattern-page .entry-content ul:not([class*="gug-"]) { list-style: disc !important; }
+.gug-pattern-page .entry-content ul.gug-event-card__list,
+.gug-pattern-page .entry-content ul:not([class*="gug-"]):not(.wp-block-post-template) { list-style: disc !important; }
 
 /* Blocksy imposta line-height 1.65 sul body: la grafica è disegnata con l'interlinea
    predefinita del browser (prose, checklist e box dichiarano la propria) */
@@ -220,7 +221,8 @@ body.gug-pattern-page { background: var(--gug-white); }
 .gug-pattern-page .entry-content > .gug-section { line-height: normal; }
 
 /* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nelle griglie la spaziatura è il gap */
-.gug-pattern-page .gug-cards > * { margin-block: 0; }
+.gug-pattern-page .gug-cards > *,
+.gug-pattern-page .gug-newslist .wp-block-post-template > * { margin-block: 0; }
 
 /* Blocksy dà margin-block-end (--theme-content-spacing) ai figli dei layout "flow":
    il summary dell'accordion staccherebbe l'elenco dal titolo */
@@ -240,3 +242,6 @@ body.gug-pattern-page { background: var(--gug-white); }
 
 /* Composizione della Giuria (singola designazione) */
 .gug-giuria { line-height: normal; }
+
+/* Card news (Query Loop): Blocksy aggiunge margin-block-end ai figli dei gruppi "flow" */
+.gug-pattern-page .gug-newscard > * { margin-block-end: 0; }
