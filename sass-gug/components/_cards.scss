@@ -1,14 +1,10 @@
 /* 8. Card con elenco link (Calendari) ------------------------------------ */
-/* Scelta cliente: tutti i settori su una riga (5 colonne) da 1200px,
-   3 + 2 tra 1000 e 1199px (griglia a 6: le prime tre occupano 2 colonne, le ultime due 3),
-   una card per riga sotto il breakpoint tablet di Blocksy (< 1000px). */
+/* Scelta cliente: card sempre della stessa larghezza, gli spazi in fondo restano vuoti.
+   5 colonne da 1200px, 3 tra 1000 e 1199px, 2 tra 690 e 999px, 1 sotto 690px (breakpoint Blocksy). */
 .gug-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-@media (min-width: 1000px) and (max-width: 1199.98px) {
-  .gug-cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .gug-cards > * { grid-column: span 2; }
-  .gug-cards > :nth-child(n+4) { grid-column: span 3; }
-}
-@media (max-width: 999.98px) { .gug-cards { grid-template-columns: 1fr; gap: 12px; } }
+@media (max-width: 1199.98px) { .gug-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 999.98px) { .gug-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+@media (max-width: 689.98px) { .gug-cards { grid-template-columns: 1fr; } }
 
 .gug-card {
   position: relative;
