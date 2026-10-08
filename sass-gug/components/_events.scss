@@ -1,0 +1,40 @@
+/* 4. Manifestazioni della settimana — output shortcode [gug_manifestazioni] */
+.gug-events {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 999.98px) { .gug-events { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 689.98px) { .gug-events { grid-template-columns: 1fr; gap: 12px; } }
+
+.gug-event-card {
+  background: var(--gug-white);
+  color: var(--gug-ink);
+  border-radius: var(--gug-radius-lg);
+  box-shadow: var(--gug-shadow);
+  padding: 26px 22px 22px;
+  position: relative;
+  overflow: hidden;
+}
+.gug-event-card::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 6px; background: var(--gug-sector);
+}
+.gug-event-card__title {
+  font-family: var(--gug-font-display);
+  font-weight: 700; font-size: 26px; line-height: 1;
+  color: var(--gug-sector-ink);
+  margin: 0; padding-bottom: 14px; border-bottom: 2px solid var(--gug-line);
+}
+.gug-event-card__day { padding-top: 16px; }
+.gug-event-card__day + .gug-event-card__day { margin-top: 16px; border-top: 1px solid var(--gug-line); }
+.gug-event-card__date {
+  margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gug-muted);
+}
+.gug-event-card__list { margin: 8px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.5; }
+.gug-event-card__item + .gug-event-card__item { margin-top: 6px; }
+.gug-event-card__link { color: var(--gug-ink); }
+.gug-event-card__link:hover { color: var(--gug-sector-ink); }
+.gug-event-card__cta { margin-top: 18px; color: var(--gug-ink); }
+.gug-event-card__cta:hover { color: var(--gug-sector-ink); }
+.gug-event-card__empty { margin: 18px 0 0; font-size: 15px; color: var(--gug-muted); }

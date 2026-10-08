@@ -1,0 +1,20 @@
+/* 14. Loghi federazioni — output shortcode [gug_loghi] ------------------- */
+.gug-logos {
+  display: flex; align-items: center; justify-content: space-between; gap: 44px;
+  padding-block: 40px; padding-inline: var(--gug-inline);
+  background: var(--gug-surface);
+}
+.gug-logos__item { flex: 0 0 auto; }
+.gug-logos__item img { display: block; height: 64px; width: auto; }
+.gug-logos__item--tall img { height: 90px; }
+.gug-logos__dots { display: none; }
+@media (max-width: 999.98px) {
+  .gug-logos {
+    justify-content: flex-start; gap: 34px; padding-block: 24px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .gug-logos::-webkit-scrollbar { display: none; }
+  .gug-logos__item { scroll-snap-align: start; }
+  .gug-logos__item img { height: 46px; }
+  .gug-logos__item--tall img { height: 66px; }
+}

@@ -1,0 +1,26 @@
+/* 10. Accordion — core/details ------------------------------------------ */
+.gug-accordion {
+  border: 1px solid var(--gug-line);
+  border-radius: var(--gug-radius-lg);
+  background: var(--gug-white);
+  overflow: hidden;
+}
+.gug-accordion + .gug-accordion { margin-top: 16px; }
+.gug-accordion > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 24px;
+  font-family: var(--gug-font-display); font-weight: 700; font-size: 26px; line-height: 1.05; color: var(--gug-ink);
+}
+.gug-accordion > summary::-webkit-details-marker { display: none; }
+.gug-accordion > summary::after {
+  content: ""; flex: 0 0 36px; height: 36px; border-radius: 50%;
+  background: var(--gug-surface) var(--gug-i-plus) center / 16px no-repeat;
+}
+.gug-accordion[open] > summary { border-bottom: 1px solid var(--gug-line); }
+.gug-accordion[open] > summary::after { background-image: var(--gug-i-minus); }
+.gug-accordion > :not(summary) { margin: 0; padding: 6px 24px 14px; }
+.gug-accordion > .gug-accordion__label {
+  padding-bottom: 0; padding-top: 18px;
+  font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gug-muted);
+}

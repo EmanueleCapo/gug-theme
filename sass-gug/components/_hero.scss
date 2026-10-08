@@ -1,0 +1,33 @@
+/* 3. Hero ----------------------------------------------------------------- */
+.gug-hero {
+  background: var(--gug-gradient);
+  color: var(--gug-white);
+  padding-block: 44px 52px;
+  padding-inline: var(--gug-inline);
+  font-family: var(--gug-font-body);
+}
+.gug-hero[class*="gug-sector--"] {
+  background: linear-gradient(165deg, var(--gug-sector-deep) 0%, var(--gug-sector) 72%, var(--gug-sector-light) 100%);
+}
+.gug-hero__title {
+  font-family: var(--gug-font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 5.4vw, 76px);
+  line-height: .95;
+  letter-spacing: -.02em;
+  color: var(--gug-white);
+  margin: 0;
+  text-wrap: balance;
+}
+.gug-hero__tag {
+  display: inline-flex; margin: 16px 0 0;
+  font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: var(--gug-radius-pill);
+  background: rgba(255, 255, 255, .18); border: 1px solid rgba(255, 255, 255, .45);
+}
+.gug-hero--home { padding-block: 44px 56px; }
+.gug-hero--home .gug-hero__title { margin-bottom: 30px; }
+@media (max-width: 689.98px) {
+  .gug-hero { padding-block: 26px 32px; }
+  .gug-hero--home .gug-hero__title { margin-bottom: 20px; }
+}

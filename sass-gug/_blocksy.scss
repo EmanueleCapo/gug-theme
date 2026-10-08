@@ -1,0 +1,67 @@
+/* =========================================================================
+   gug-blocksy.css — override grafici su header/footer generati da Blocksy.
+   Struttura (righe, elementi, menu) si configura nel Customizer: qui solo stile.
+   Verificare i selettori sulla versione Blocksy installata.
+   ========================================================================= */
+
+:root {
+  --theme-font-family: var(--gug-font-body);
+  --theme-text-color: var(--gug-ink);
+  --theme-link-initial-color: var(--gug-blue-700);
+  --theme-link-hover-color: var(--gug-blue-900);
+}
+body { font-family: var(--gug-font-body); color: var(--gug-ink); }
+h1, h2, h3, h4 { font-family: var(--gug-font-display); }
+
+/* Header · riga top: settori ------------------------------------------- */
+.ct-header [data-row="top"] {
+  background: linear-gradient(90deg, var(--gug-blue-900), var(--gug-blue-700));
+}
+.ct-header [data-row="top"] .menu > li > .ct-menu-link {
+  color: var(--gug-white);
+  font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 8px 14px; border-radius: var(--gug-radius-pill);
+  transition: background-color .15s;
+}
+/* Ogni voce settore riceve nel menu WP la classe CSS gug-sector--xx */
+.ct-header [data-row="top"] .menu > li[class*="gug-sector--"] > .ct-menu-link:hover,
+.ct-header [data-row="top"] .menu > li[class*="gug-sector--"].current-menu-ancestor > .ct-menu-link,
+.ct-header [data-row="top"] .menu > li[class*="gug-sector--"].current-menu-item > .ct-menu-link {
+  background: var(--gug-sector-ink);
+  color: var(--gug-white);
+}
+.ct-header [data-row="top"] .sub-menu {
+  border-radius: var(--gug-radius-md); overflow: hidden;
+  box-shadow: 0 18px 40px rgba(25, 42, 61, .18);
+  background: var(--gug-white);
+}
+.ct-header [data-row="top"] .sub-menu .ct-menu-link { color: var(--gug-ink); font-weight: 600; font-size: 15px; }
+.ct-header [data-row="top"] .sub-menu .ct-menu-link:hover { color: var(--gug-sector-ink, var(--gug-blue-700)); }
+
+/* Header · riga principale --------------------------------------------- */
+.ct-header [data-row="middle"] { background: var(--gug-white); border-bottom: 1px solid var(--gug-line); }
+.ct-header .site-title { font-family: var(--gug-font-display); font-weight: 700; font-size: 22px; line-height: 1; }
+.ct-header .site-title a { color: var(--gug-ink); }
+.ct-header .site-description { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gug-muted); }
+.ct-header [data-row="middle"] .menu > li > .ct-menu-link { color: var(--gug-ink); font-weight: 600; font-size: 16px; }
+.ct-header [data-row="middle"] .menu > li > .ct-menu-link:hover,
+.ct-header [data-row="middle"] .menu > li.current-menu-item > .ct-menu-link { color: var(--gug-blue-700); }
+.ct-header .ct-header-cta .ct-button {
+  background: linear-gradient(135deg, var(--gug-blue-900), var(--gug-blue-500));
+  color: var(--gug-white); border-radius: var(--gug-radius-pill);
+  font-weight: 700; font-size: 15px; padding: 0 22px; min-height: 44px;
+}
+.ct-header .ct-header-trigger { border-radius: 14px; background: var(--gug-surface); color: var(--gug-blue-700); }
+
+/* Offcanvas mobile ------------------------------------------------------ */
+#offcanvas .ct-panel-content { background: var(--gug-white); }
+#offcanvas .mobile-menu .menu > li > .ct-menu-link { font-weight: 600; font-size: 16.5px; color: var(--gug-ink); }
+#offcanvas .mobile-menu .menu > li[class*="gug-sector--"] > .ct-menu-link::before {
+  content: ""; width: 4px; height: 19px; border-radius: 2px; background: var(--gug-sector); margin-right: 11px;
+}
+
+/* Footer --------------------------------------------------------------- */
+.ct-footer [data-row="top"] { background: var(--gug-surface); padding: 0; }
+.ct-footer [data-row="middle"] { background: var(--gug-white); border-top: 1px solid var(--gug-line); }
+.ct-footer [data-row="bottom"] { background: var(--gug-white); border-top: 1px solid var(--gug-line); }
+.ct-footer .ct-footer-copyright { font-size: 14px; color: var(--gug-muted); }

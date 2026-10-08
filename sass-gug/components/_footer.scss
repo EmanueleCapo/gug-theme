@@ -1,0 +1,15 @@
+/* 15. Footer info (pattern gug/footer-info in un widget Blocksy) --------- */
+.gug-footer { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; font-family: var(--gug-font-body); color: var(--gug-ink); }
+@media (max-width: 689.98px) { .gug-footer { grid-template-columns: 1fr; gap: 26px; } }
+.gug-brand { display: flex; align-items: center; gap: 18px; margin: 0 0 14px; }
+.gug-brand__logo { margin: 0; flex: 0 0 auto; }
+.gug-brand__logo img { display: block; height: 66px; width: auto; }
+.gug-brand__name { font-family: var(--gug-font-display); font-weight: 700; font-size: 26px; line-height: 1.02; margin: 0; color: var(--gug-ink); }
+.gug-footer__text { font-size: 15.5px; line-height: 1.7; color: var(--gug-ink-2); margin: 0 0 12px; }
+.gug-footer__text a { color: var(--gug-blue-700); }
+.gug-footer__text a:hover { color: var(--gug-blue-900); }
+.gug-footer__title { font-family: var(--gug-font-display); font-weight: 700; font-size: 22px; margin: 0 0 14px; color: var(--gug-ink); }
+@media (max-width: 689.98px) {
+  .gug-brand__logo img { height: 52px; }
+  .gug-brand__name { font-size: 21px; }
+}

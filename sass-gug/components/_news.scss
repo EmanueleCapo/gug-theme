@@ -1,0 +1,27 @@
+/* 6. News — core/query ---------------------------------------------------- */
+.gug-newslist__items,
+.gug-newslist .wp-block-post-template {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 12px;
+}
+.gug-newslist--grid .wp-block-post-template { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 999.98px) { .gug-newslist--grid .wp-block-post-template { grid-template-columns: 1fr; } }
+
+.gug-newscard {
+  position: relative;
+  background: var(--gug-surface-2);
+  border: 1px solid var(--gug-line);
+  border-radius: var(--gug-radius-md);
+  padding: 18px 56px 18px 20px;
+  transition: border-color .15s, background-color .15s;
+}
+.gug-newscard::after {
+  content: ""; position: absolute; right: 20px; top: 50%; width: 20px; height: 20px; margin-top: -10px;
+  background: var(--gug-blue-700);
+  -webkit-mask: var(--gug-i-chevron) center / contain no-repeat; mask: var(--gug-i-chevron) center / contain no-repeat;
+}
+.gug-newscard:hover { border-color: var(--gug-blue-500); background: var(--gug-white); }
+.gug-newscard__date { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gug-muted); }
+.gug-newscard__title { margin: 4px 0 0; font-family: var(--gug-font-body); font-size: 18px; font-weight: 700; line-height: 1.3; }
+.gug-newscard__title a { color: var(--gug-ink); }
+.gug-newscard__title a::before { content: ""; position: absolute; inset: 0; border-radius: inherit; }

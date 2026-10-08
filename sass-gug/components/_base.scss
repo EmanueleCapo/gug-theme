@@ -1,0 +1,43 @@
+/* 2. Base contenuti ------------------------------------------------------- */
+.entry-content > .gug-hero,
+.entry-content > .gug-section { margin-block: 0; }
+[class*="gug-"] { box-sizing: border-box; }
+.gug-section a, .gug-hero a { text-decoration: none; }
+
+.gug-section {
+  padding-block: 56px 64px;
+  padding-inline: var(--gug-inline);
+  font-family: var(--gug-font-body);
+  color: var(--gug-ink);
+}
+.gug-section--surface { background: var(--gug-surface); }
+
+.gug-heading {
+  font-family: var(--gug-font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1;
+  letter-spacing: -.015em;
+  color: var(--gug-ink);
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+.gug-heading--sm { font-size: clamp(24px, 2.2vw, 30px); line-height: 1.08; margin-bottom: 16px; }
+
+.gug-prose { font-size: 18px; line-height: 1.72; color: var(--gug-ink-2); }
+.gug-prose p { margin: 0 0 18px; text-wrap: pretty; }
+.gug-prose p:last-child { margin-bottom: 0; }
+.gug-prose--lead p:first-child { color: var(--gug-ink); font-weight: 600; font-size: 19px; }
+.gug-prose--columns { columns: 2; column-gap: 52px; }
+.gug-prose--columns p { break-inside: avoid; }
+
+.gug-arrow-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 15px; color: var(--gug-blue-700);
+}
+.gug-arrow-link::after {
+  content: ""; width: 15px; height: 15px; background: currentColor;
+  -webkit-mask: var(--gug-i-arrow) center / contain no-repeat; mask: var(--gug-i-arrow) center / contain no-repeat;
+  transition: transform .15s;
+}
+.gug-arrow-link:hover::after { transform: translateX(3px); }

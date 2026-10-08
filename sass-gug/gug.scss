@@ -1,0 +1,26 @@
+/* =========================================================================
+   G.U.G. Piemonte e Valle d'Aosta — gug.css
+   Tema figlio Blocksy · contenuti Gutenberg · naming BEM, prefisso "gug-"
+   Breakpoint allineati a Blocksy: tablet < 1000px, mobile < 690px
+   ========================================================================= */
+
+// Sorgente: docs/wordpress/gug-child/assets/css/gug.css (handoff Claude Design), diviso per componente.
+// Compilato in css/gug.min.css. Caricato solo se gug_redesign_is_active().
+
+@use "components/tokens";
+@use "components/base";
+@use "components/hero";
+@use "components/events";
+@use "components/columns";
+@use "components/news";
+@use "components/promo";
+@use "components/cards";
+@use "components/lists";
+@use "components/accordion";
+@use "components/designazioni";
+@use "components/giuria";
+@use "components/boxes";
+@use "components/logos";
+@use "components/footer";
+@use "components/display";
+@use "blocksy";

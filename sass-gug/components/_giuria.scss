@@ -1,0 +1,26 @@
+/* 12. Composizione della Giuria — single-designazioni ------------------- */
+.gug-giuria__print-header { display: none; }
+.gug-giuria__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+@media (max-width: 999.98px) { .gug-giuria__layout { grid-template-columns: 1fr; gap: 40px; } }
+
+.gug-datalist { margin: 0; border-top: 2px solid var(--gug-ink); }
+.gug-datalist__row {
+  display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 20px;
+  padding: 13px 0; border-bottom: 1px solid var(--gug-line);
+}
+.gug-datalist__row dt { font-size: 15px; font-weight: 700; color: var(--gug-ink-2); }
+.gug-datalist__row dd { margin: 0; font-size: 16.5px; font-weight: 600; }
+.gug-datalist__row--head dt,
+.gug-datalist__row--head dd { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gug-muted); }
+.gug-datalist__names { list-style: none; margin: 0; padding: 0; font-weight: 500; }
+.gug-datalist__names li + li { margin-top: 5px; }
+@media (max-width: 689.98px) {
+  .gug-datalist__row { grid-template-columns: 1fr; gap: 4px; }
+  .gug-datalist__row--head { display: none; }
+}
+
+.gug-print-link { margin-top: 26px; color: var(--gug-blue-700); font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 9px; }
+.gug-print-link::before {
+  content: ""; width: 18px; height: 18px; background: currentColor;
+  -webkit-mask: var(--gug-i-print) center / contain no-repeat; mask: var(--gug-i-print) center / contain no-repeat;
+}
