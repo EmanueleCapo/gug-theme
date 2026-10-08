@@ -24,6 +24,8 @@
   --gug-radius-pill: 999px;
   --gug-container: 1360px;
   --gug-gutter: 40px;
+  --gug-fs-body: 16px; // dimensione del testo corrente (scelta cliente: 16px, non 18px)
+  --gug-fs-lead: 17px; // primo paragrafo in evidenza
   --gug-inline: max(var(--gug-gutter), calc((100% - var(--gug-container)) / 2));
 
   --gug-gradient: linear-gradient(165deg, var(--gug-blue-700) 0%, var(--gug-blue-500) 62%, var(--gug-blue-300) 100%);

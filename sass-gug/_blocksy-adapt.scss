@@ -213,3 +213,8 @@ body.gug-pattern-page { background: var(--gug-white); }
 /* ...e toglie i pallini con !important: li ripristiniamo dove l'handoff li prevede */
 .gug-pattern-page .entry-content ul.gug-checklist,
 .gug-pattern-page .entry-content ul:not([class*="gug-"]) { list-style: disc !important; }
+
+/* Blocksy imposta line-height 1.65 sul body: la grafica è disegnata con l'interlinea
+   predefinita del browser (prose, checklist e box dichiarano la propria) */
+.gug-pattern-page .entry-content > .gug-hero,
+.gug-pattern-page .entry-content > .gug-section { line-height: normal; }

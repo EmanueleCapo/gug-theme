@@ -24,10 +24,10 @@
 }
 .gug-heading--sm { font-size: clamp(24px, 2.2vw, 30px); line-height: 1.08; margin-bottom: 16px; }
 
-.gug-prose { font-size: 18px; line-height: 1.72; color: var(--gug-ink-2); }
+.gug-prose { font-size: var(--gug-fs-body); line-height: 1.72; color: var(--gug-ink-2); }
 .gug-prose p { margin: 0 0 18px; text-wrap: pretty; }
 .gug-prose p:last-child { margin-bottom: 0; }
-.gug-prose--lead p:first-child { color: var(--gug-ink); font-weight: 600; font-size: 19px; }
+.gug-prose--lead p:first-child { color: var(--gug-ink); font-weight: 600; font-size: var(--gug-fs-lead); }
 .gug-prose--columns { columns: 2; column-gap: 52px; }
 .gug-prose--columns p { break-inside: avoid; }
 

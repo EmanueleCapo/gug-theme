@@ -1,6 +1,6 @@
 /* 13. Riquadri ----------------------------------------------------------- */
 .gug-box { border: 1px solid var(--gug-line); border-radius: var(--gug-radius-lg); background: var(--gug-surface-2); padding: 24px; }
-.gug-box p { margin: 0; font-size: 17.5px; line-height: 1.7; color: var(--gug-ink-2); }
+.gug-box p { margin: 0; font-size: var(--gug-fs-body); line-height: 1.7; color: var(--gug-ink-2); }
 .gug-box a { font-weight: 700; color: var(--gug-blue-700); }
 .gug-box a:hover { color: var(--gug-blue-900); }
 .gug-block { margin-top: 36px; padding-top: 32px; border-top: 2px solid var(--gug-ink); }

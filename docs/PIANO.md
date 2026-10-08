@@ -77,3 +77,4 @@ Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
 |---|---|---|---|
 | Presentazione | 2 | 5818 | verificata desktop/mobile, blocchi validi |
 | Diventa un Ufficiale Gara | 35 | 5819 | verificata desktop, PDF reali collegati, blocchi validi |
+| Calendari 2026-2027 | 1509 | 5820 | verificata desktop/mobile, link attuali (anni stagione da aggiornare), blocchi validi |

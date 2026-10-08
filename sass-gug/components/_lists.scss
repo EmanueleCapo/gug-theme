@@ -4,7 +4,7 @@
 .gug-linklist li:last-child { border-bottom: 0; }
 .gug-linklist a {
   display: flex; align-items: center; justify-content: space-between; gap: 14px;
-  padding: 13px 0; font-size: 16.5px; font-weight: 600; color: var(--gug-ink);
+  padding: 13px 0; font-size: var(--gug-fs-body); font-weight: 600; color: var(--gug-ink);
 }
 .gug-linklist a::after {
   content: ""; flex: 0 0 16px; height: 16px; background: var(--gug-sector-ink, var(--gug-blue-700));
@@ -23,7 +23,7 @@
 .gug-doclist a,
 .gug-doclist__static {
   display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 14px; align-items: center;
-  padding: 14px 0; font-size: 16.5px; font-weight: 600; color: var(--gug-ink);
+  padding: 14px 0; font-size: var(--gug-fs-body); font-weight: 600; color: var(--gug-ink);
 }
 .gug-doclist a:hover { color: var(--gug-blue-700); }
 .gug-doclist a::before,
@@ -38,5 +38,5 @@
 .gug-doclist a[href*="youtu.be"]::before { background: var(--gug-blue-700); -webkit-mask-image: var(--gug-i-video); mask-image: var(--gug-i-video); }
 .gug-doclist__static::before { -webkit-mask-image: var(--gug-i-id); mask-image: var(--gug-i-id); }
 
-.gug-checklist { margin: 0; padding-left: 22px; font-size: 17.5px; line-height: 1.65; color: var(--gug-ink-2); }
+.gug-checklist { margin: 0; padding-left: 22px; font-size: var(--gug-fs-body); line-height: 1.65; color: var(--gug-ink-2); }
 .gug-checklist li + li { margin-top: 10px; }
