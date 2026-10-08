@@ -1,0 +1,163 @@
+/* =========================================================================
+   Adattamenti di gug-blocksy.css al markup e al CSS dinamico reali di
+   Blocksy 2.1.58 (uploads/blocksy/css/global.css generato dal Customizer).
+   Prefisso .gug-redesign: specificità sufficiente a vincere su global.css
+   e attivo solo quando il redesign è attivo.
+   Valori misurati sull'anteprima docs/wordpress/preview (desktop 1201px).
+   ========================================================================= */
+
+.gug-redesign {
+
+  /* Header · riga top: settori ----------------------------------------- */
+  /* Anche nello stato sticky, dove Blocksy riapplica lo sfondo del Customizer */
+  .ct-header [data-row*="top"],
+  .ct-header [data-sticky] [data-row*="top"] {
+    --height: 52px;
+    background: linear-gradient(90deg, var(--gug-blue-900), var(--gug-blue-700));
+  }
+
+  .ct-header [data-id="menu-secondary"] {
+    --menu-items-spacing: 28px;
+    --menu-indicator-hover-color: transparent;
+    --menu-indicator-active-color: transparent;
+  }
+
+  .ct-header [data-id="menu-secondary"] > ul > li + li { margin-inline-start: 4px; }
+
+  .ct-header [data-id="menu-secondary"] > ul > li > a {
+    --menu-item-height: auto;
+    --theme-font-size: 13px;
+    --theme-font-weight: 700;
+    --theme-text-transform: uppercase;
+    --theme-letter-spacing: .1em;
+    --theme-link-initial-color: var(--gug-white);
+    --theme-link-hover-color: var(--gug-white);
+    --theme-link-active-color: var(--gug-white);
+    height: 32px;
+  }
+
+  /* Nessuna freccia sulle voci settore, come nella grafica (il sottomenu resta su hover) */
+  .ct-header [data-id="menu-secondary"] > ul > li > a .ct-toggle-dropdown-desktop { display: none; }
+
+  .ct-header [data-id="menu-secondary"] .sub-menu {
+    --dropdown-background-color: var(--gug-white);
+    --dropdown-background-hover-color: var(--gug-surface);
+    --dropdown-top-offset: 0px;
+    --dropdown-divider: none;
+    --theme-border-radius: var(--gug-radius-md);
+  }
+
+  .ct-header [data-id="menu-secondary"] .sub-menu .ct-menu-link {
+    --theme-font-size: 15px;
+    --theme-font-weight: 600;
+    --theme-link-initial-color: var(--gug-ink);
+    --theme-link-hover-color: var(--gug-sector-ink, var(--gug-blue-700));
+  }
+
+  /* Header · riga principale ------------------------------------------- */
+  .ct-header [data-row*="middle"],
+  .ct-header [data-sticky] [data-row*="middle"] {
+    --height: 97px;
+    background-color: var(--gug-white);
+    border-bottom: 1px solid var(--gug-line);
+  }
+
+  .ct-header [data-id="logo"] .site-logo-container { --logo-max-height: 62px; }
+  .ct-header [data-id="logo"].site-branding { column-gap: 14px; }
+
+  .ct-header [data-id="logo"] .site-title {
+    --theme-font-family: var(--gug-font-display);
+    --theme-font-size: 22px;
+    --theme-font-weight: 700;
+    --theme-line-height: 1.15;
+    --theme-link-initial-color: var(--gug-ink);
+    --theme-link-hover-color: var(--gug-blue-700);
+  }
+
+  .ct-header [data-id="logo"] .site-description {
+    --theme-font-size: 12px;
+    --theme-font-weight: 700;
+    --theme-text-transform: uppercase;
+    --theme-letter-spacing: .12em;
+    --theme-text-color: var(--gug-muted);
+  }
+
+  .ct-header [data-id="menu"] {
+    --menu-items-spacing: 28px;
+    --menu-indicator-hover-color: transparent;
+    --menu-indicator-active-color: transparent;
+  }
+
+  .ct-header [data-id="menu"] > ul > li > a {
+    --theme-font-size: 16px;
+    --theme-font-weight: 600;
+    --theme-text-transform: none;
+    --theme-link-initial-color: var(--gug-ink);
+    --theme-link-hover-color: var(--gug-blue-700);
+    --theme-link-active-color: var(--gug-blue-700);
+  }
+
+  .ct-header [data-id="menu"] .sub-menu .ct-menu-link {
+    --theme-link-initial-color: var(--gug-ink);
+    --theme-link-hover-color: var(--gug-blue-700);
+  }
+
+  /* Header · tablet e mobile (valori misurati sull'anteprima a 390px) --- */
+  @media (max-width: 999.98px) {
+    .ct-header [data-row*="middle"] { --height: 73px; }
+    .ct-header [data-id="logo"] .site-logo-container { --logo-max-height: 44px; }
+
+    /* Blocksy applica sfondo e raggio dei toggle con !important tramite variabili dedicate */
+    .ct-header [data-id="trigger"] {
+      --theme-icon-color: var(--gug-blue-700);
+      --theme-icon-hover-color: var(--gug-blue-900);
+      --toggle-button-size: 44px;
+      --toggle-button-radius: 14px;
+      --toggle-button-background: var(--gug-surface);
+    }
+  }
+
+  /* Offcanvas mobile: la lista non ha classe .menu e le voci con sottomenu
+     hanno il link dentro .ct-sub-menu-parent ----------------------------- */
+  #offcanvas .ct-panel-inner { background: var(--gug-white); }
+
+  #offcanvas .mobile-menu > ul > li > a,
+  #offcanvas .mobile-menu > ul > li > .ct-sub-menu-parent > a {
+    --theme-font-size: 16.5px;
+    --theme-font-weight: 600;
+    --theme-link-initial-color: var(--gug-ink);
+    --theme-link-hover-color: var(--gug-blue-700);
+    --theme-link-active-color: var(--gug-blue-700);
+  }
+
+  #offcanvas .mobile-menu > ul > li[class*="gug-sector--"] > .ct-sub-menu-parent > a::before {
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    width: 4px;
+    height: 19px;
+    min-height: 19px; // Blocksy forza height dei "submenu dots" su ::before
+    margin-right: 11px;
+    border-radius: 2px;
+    background: var(--gug-sector);
+  }
+
+  /* Footer -------------------------------------------------------------- */
+  .ct-footer [data-row*="middle"],
+  .ct-footer [data-row*="bottom"] { background-color: var(--gug-white); }
+
+  .ct-footer [data-row*="middle"] > div {
+    --grid-template-columns: 1fr;
+    --container-spacing: 48px;
+    --theme-border-bottom: none;
+  }
+
+  .ct-footer [data-row*="bottom"] > div { --container-spacing: 18px; }
+
+  /* Il Customizer centra le colonne del footer: la grafica le vuole allineate a sinistra */
+  .ct-footer [data-column] {
+    --horizontal-alignment: flex-start;
+    --text-horizontal-alignment: start;
+    text-align: start;
+  }
+}
