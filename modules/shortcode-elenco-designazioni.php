@@ -119,6 +119,8 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 		$city        = (string) get_field( 'dettagli_citta', $post_id );
 		$pool        = (string) get_field( 'dettagli_piscina', $post_id );
 		$jury        = get_field( 'giuria', $post_id );
+		// Titolo senza il prefisso "Privato:" che WordPress aggiunge ai contenuti privati.
+		$title       = wptexturize( get_post_field( 'post_title', $post_id ) );
 		$jury_cell   = ! empty( $jury ) ? gug_designazioni_action_link( get_permalink(), __( 'Giuria', 'gugpiemonte' ) ) : '';
 
 		if ( $is_water_polo ) {
@@ -126,7 +128,7 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 			$rows  .= '<tr class="gug-table__row">'
 				. '<td class="gug-table__date">' . esc_html( $date ) . '</td>'
 				. '<td data-label="' . esc_attr__( 'Serie/Cat.', 'gugpiemonte' ) . '">' . ( '' !== $series ? '<span class="gug-table__badge">' . esc_html( $series ) . '</span>' : '' ) . '</td>'
-				. '<td class="gug-table__name">' . esc_html( get_the_title() ) . '</td>'
+				. '<td class="gug-table__name">' . esc_html( $title ) . '</td>'
 				. '<td data-label="' . esc_attr__( 'Città', 'gugpiemonte' ) . '">' . esc_html( $city ) . '</td>'
 				. '<td data-label="' . esc_attr__( 'Piscina', 'gugpiemonte' ) . '">' . esc_html( $pool ) . '</td>'
 				. '<td>' . $jury_cell . '</td>'
@@ -134,11 +136,13 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 			continue;
 		}
 
+		// Scelta cliente: Città e Piscina in colonne proprie, come nella pallanuoto.
 		$rules = (string) get_field( 'dettagli_regolamento_manifestazione', $post_id );
-		$place = implode( ' — ', array_filter( array( $city, $pool ) ) );
 		$rows .= '<tr class="gug-table__row">'
 			. '<td class="gug-table__date">' . esc_html( $date ) . '</td>'
-			. '<td class="gug-table__name">' . esc_html( get_the_title() ) . ( '' !== $place ? '<span class="gug-table__place">' . esc_html( $place ) . '</span>' : '' ) . '</td>'
+			. '<td class="gug-table__name">' . esc_html( $title ) . '</td>'
+			. '<td data-label="' . esc_attr__( 'Città', 'gugpiemonte' ) . '">' . esc_html( $city ) . '</td>'
+			. '<td data-label="' . esc_attr__( 'Piscina', 'gugpiemonte' ) . '">' . esc_html( $pool ) . '</td>'
 			. '<td>' . $jury_cell . '</td>'
 			. '<td>' . ( '' !== $rules ? gug_designazioni_action_link( $rules, __( 'Regolamento', 'gugpiemonte' ) ) : '' ) . '</td>'
 			. '</tr>';
@@ -156,6 +160,8 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 	} else {
 		$head = '<th scope="col">' . esc_html__( 'Data', 'gugpiemonte' ) . '</th>'
 			. '<th scope="col">' . esc_html__( 'Nome manifestazione', 'gugpiemonte' ) . '</th>'
+			. '<th scope="col">' . esc_html__( 'Città', 'gugpiemonte' ) . '</th>'
+			. '<th scope="col">' . esc_html__( 'Piscina', 'gugpiemonte' ) . '</th>'
 			. '<th scope="col">' . esc_html__( 'Giuria', 'gugpiemonte' ) . '</th>'
 			. '<th scope="col">' . esc_html__( 'Regolamento', 'gugpiemonte' ) . '</th>';
 		$type = 'designazioni';
