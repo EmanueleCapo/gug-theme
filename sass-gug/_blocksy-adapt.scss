@@ -218,3 +218,6 @@ body.gug-pattern-page { background: var(--gug-white); }
    predefinita del browser (prose, checklist e box dichiarano la propria) */
 .gug-pattern-page .entry-content > .gug-hero,
 .gug-pattern-page .entry-content > .gug-section { line-height: normal; }
+
+/* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nelle griglie la spaziatura è il gap */
+.gug-pattern-page .gug-cards > * { margin-block: 0; }
