@@ -40,7 +40,9 @@
   .gug-datalist__row--head { display: none; }
   .gug-datalist__row dt {
     padding: 7px 12px; border-radius: 8px;
-    background: linear-gradient(90deg, var(--gug-surface) 0%, var(--gug-surface) 35%, rgba(242, 245, 247, 0) 100%);
+    /* Scelta cliente: dal grigio al colore chiaro del settore. Il grigio resta pieno fino al 55%
+       (dove finiscono le etichette più lunghe), così il contrasto del testo non cambia. */
+    background: linear-gradient(90deg, var(--gug-surface) 0%, var(--gug-surface) 55%, var(--gug-sector-light, var(--gug-surface)) 100%);
   }
   .gug-datalist__row dd { padding-inline: 12px; }
 }

@@ -32,7 +32,7 @@ if ( in_array( $gug_sector, array( 'nu', 'sa' ), true ) ) {
 	$gug_info[ __( 'Cronometraggio', 'gugpiemonte' ) ] = 'cronometraggio';
 }
 ?>
-<article class="gug-giuria">
+<article class="gug-giuria<?php echo $gug_sector ? ' gug-sector--' . esc_attr( $gug_sector ) : ''; ?>">
 	<header class="gug-hero<?php echo $gug_sector ? ' gug-sector--' . esc_attr( $gug_sector ) : ''; ?>">
 		<h1 class="gug-hero__title"><?php esc_html_e( 'Composizione della Giuria', 'gugpiemonte' ); ?></h1>
 	</header>

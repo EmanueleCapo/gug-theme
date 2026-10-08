@@ -33,20 +33,17 @@ body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
 
-/* Linee sulle singole celle in px: i bordi in pt sulla riga della griglia vengono arrotondati e a volte spariscono */
-.gug-datalist { margin: 0; border: 1px solid #8a96a6; border-top: 0; }
-.gug-datalist__row {
-  display: grid !important; grid-template-columns: 58mm 1fr !important; gap: 0 !important;
-  padding: 0 !important; border-bottom: 0 !important;
-}
+/* In stampa le liste diventano tabelle con bordi collassati: il browser li disegna sempre sopra
+   gli sfondi, anche quando la stampa viene ridotta per adattarsi al foglio (i bordi delle celle
+   di una griglia, a scala ridotta, venivano arrotondati e alcuni sparivano). */
+.gug-datalist { display: table !important; width: 100%; margin: 0; border-collapse: collapse; border: 1px solid #8a96a6; border-top: 0; }
+.gug-datalist__row, .gug-datalist__row--head { display: table-row !important; padding: 0 !important; border: 0 !important; }
 .gug-datalist__row dt, .gug-datalist__row dd {
-  margin: 0; padding: 6pt 9pt !important; color: #000 !important; background: none !important; border-radius: 0 !important;
-  border-bottom: 1px solid #b9c2cd;
+  display: table-cell; vertical-align: top; margin: 0; padding: 6pt 9pt !important;
+  border: 1px solid #b9c2cd; color: #000 !important; border-radius: 0 !important;
 }
-.gug-datalist__row:last-child dt, .gug-datalist__row:last-child dd { border-bottom: 0; }
-.gug-datalist__row dt { font-size: 10.5pt !important; font-weight: 700; background: #eef1f4 !important; border-right: 1px solid #b9c2cd; }
-.gug-datalist__row dd { font-size: 11pt !important; font-weight: 600; }
-.gug-datalist__row--head { display: grid !important; }
+.gug-datalist__row dt { width: 58mm; font-size: 10.5pt !important; font-weight: 700; background: #eef1f4 !important; }
+.gug-datalist__row dd { font-size: 11pt !important; font-weight: 600; background: none !important; }
 .gug-datalist__row--head dt, .gug-datalist__row--head dd {
   background: #dde3ea !important; font-size: 8.5pt !important; letter-spacing: .08em; text-transform: uppercase;
 }
