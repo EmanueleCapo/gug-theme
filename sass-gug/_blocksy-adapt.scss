@@ -221,3 +221,10 @@ body.gug-pattern-page { background: var(--gug-white); }
 
 /* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nelle griglie la spaziatura è il gap */
 .gug-pattern-page .gug-cards > * { margin-block: 0; }
+
+/* Blocksy dà margin-block-end (--theme-content-spacing) ai figli dei layout "flow":
+   il summary dell'accordion staccherebbe l'elenco dal titolo */
+.gug-pattern-page .gug-accordion > summary { margin-block: 0; }
+
+/* Sottotitoli dentro l'accordion (es. Pallanuoto "Maschi"/"Femmine"): non previsti dalla grafica */
+.gug-accordion > .gug-heading { padding-top: 22px; padding-bottom: 0; }

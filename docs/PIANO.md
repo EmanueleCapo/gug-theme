@@ -78,3 +78,8 @@ Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
 | Presentazione | 2 | 5818 | verificata desktop/mobile, blocchi validi |
 | Diventa un Ufficiale Gara | 35 | 5819 | verificata desktop, PDF reali collegati, blocchi validi |
 | Calendari 2026-2027 | 1509 | 5820 | verificata desktop/mobile, link attuali (anni stagione da aggiornare), blocchi validi |
+| Regolamenti nu / pn / sa / sy / tu | 1345 / 1705 / 1744 / 1762 / 1794 | 5821 / 5824 / 5827 / 5829 / 5832 | convertite con `docs/tools/convert-doc-page.php` |
+| Modulistica nu / pn / sa / sy / tu | 1567 / 1736 / 1750 / 1785 / 1799 | 5823 / 5826 / 5828 / 5831 / 5833 | idem |
+| Formazione UG nu / pn / sy | 1553 / 1730 / 1768 | 5822 / 5825 / 5830 | idem |
+
+Conversione documenti: 111 documenti (= pagine attuali), 99 URL verificati. Due link Federnuoto già rotti sulle pagine attuali (Trofeo delle Regioni PN 2025, 404). Tutte le 13 bozze: blocchi validi.
