@@ -51,3 +51,22 @@ Checklist `GOLIVE.md`.
 
 ### 7. Pulizia
 Moduli, shortcode, SASS vecchi, Owl Carousel, Essential Blocks/Qubely; rinomina dei file nuovi.
+
+## Inventario produzione (2026-10-08)
+
+WordPress 7.1.3 · Blocksy 2.1.58 · Companion 2.1.58 (free) · Classic Widgets attivo · LiteSpeed attivo (FVM inattivo).
+Accesso REST: mu-plugin `wp-content/mu-plugins/gug-rest-auth.php` (header `X-WP-Auth: Basic …`).
+Menu: `main` (id 2, menu_1), `settori` (id 3, menu_2), `mobile` (id 29). Homepage = pagina 1147.
+
+| Pagina | ID attuale |
+|---|---|
+| Home | 1147 |
+| Presentazione | 2 |
+| Diventa un Ufficiale Gara | 35 |
+| Calendari 2025-2026 | 1509 |
+| Designazioni nu / pn / sa / sy / tu | 1188 / 1221 / 1222 / 1223 / 1224 |
+| Regolamenti nu / pn / sa / sy / tu | 1345 / 1705 / 1744 / 1762 / 1794 |
+| Modulistica nu / pn / sa / sy / tu | 1567 / 1736 / 1750 / 1785 / 1799 |
+| Formazione UG nu / pn / sy | 1553 / 1730 / 1768 |
+
+Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
