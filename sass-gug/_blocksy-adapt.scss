@@ -36,6 +36,15 @@
     height: 32px;
   }
 
+  /* Hover: il vecchio CSS del tema colora i link settore con !important (.menu-xx a:hover)
+     e Blocksy (menu type-4) disegna due linee con ::before/::after */
+  .ct-header [data-id="menu-secondary"] > ul > li[class*="gug-sector--"] > a {
+    color: var(--gug-white) !important;
+  }
+
+  .ct-header [data-id="menu-secondary"] > ul > li > a::before,
+  .ct-header [data-id="menu-secondary"] > ul > li > a::after { display: none; }
+
   /* Nessuna freccia sulle voci settore, come nella grafica (il sottomenu resta su hover) */
   .ct-header [data-id="menu-secondary"] > ul > li > a .ct-toggle-dropdown-desktop { display: none; }
 
@@ -97,10 +106,26 @@
     --theme-link-active-color: var(--gug-blue-700);
   }
 
+  /* Il Customizer imposta un offset di -50px che fa coprire le voci dal sottomenu */
+  .ct-header [data-id="menu"] .sub-menu {
+    --dropdown-top-offset: 0px;
+    --sticky-state-dropdown-top-offset: 0px;
+    --dropdown-background-color: var(--gug-white);
+    --dropdown-background-hover-color: var(--gug-surface);
+    --dropdown-divider: none;
+    --theme-border-radius: var(--gug-radius-md);
+    overflow: visible;
+  }
+
   .ct-header [data-id="menu"] .sub-menu .ct-menu-link {
+    --theme-font-size: 15px;
+    --theme-font-weight: 600;
     --theme-link-initial-color: var(--gug-ink);
     --theme-link-hover-color: var(--gug-blue-700);
+    --theme-link-active-color: var(--gug-blue-700);
   }
+
+  .ct-header [data-id="logo"] .site-description a { color: inherit; }
 
   /* Header · tablet e mobile (valori misurati sull'anteprima a 390px) --- */
   @media (max-width: 999.98px) {

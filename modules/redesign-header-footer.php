@@ -129,7 +129,8 @@ function gug_redesign_filter_header_placements( $placements ) {
 				'logo_position'   => 'left',
 				'has_tagline'     => 'yes',
 				'blogname'        => __( 'Gruppo Ufficiali Gara', 'gugpiemonte' ),
-				'blogdescription' => __( "Piemonte e Valle d'Aosta", 'gugpiemonte' ),
+				// La tagline di Blocksy non ha link: lo inseriamo per tornare alla home come il titolo.
+				'blogdescription' => sprintf( '<a href="%s" rel="home">%s</a>', esc_url( home_url( '/' ) ), esc_html__( "Piemonte e Valle d'Aosta", 'gugpiemonte' ) ),
 			)
 		);
 		$section['items'] = gug_redesign_set_item_values(
