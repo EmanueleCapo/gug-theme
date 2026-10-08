@@ -84,3 +84,4 @@ Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
 
 Conversione documenti: 111 documenti (= pagine attuali), 99 URL verificati. Due link Federnuoto già rotti sulle pagine attuali (Trofeo delle Regioni PN 2025, 404). Tutte le 13 bozze: blocchi validi.
 | Designazioni nu / pn / sa / sy / tu | 1188 / 1221 / 1222 / 1223 / 1224 | 5834 / 5835 / 5836 / 5837 / 5838 | shortcode [elenco-designazioni], verificata nu con ?gug_settimana=20260717 |
+| Composizione della Giuria (single-designazioni) | template vecchio | parts/single-designazione/redesign.php (solo loggati) | verificata desktop + stampa A4 nu e pn |

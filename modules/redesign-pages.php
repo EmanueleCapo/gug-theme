@@ -68,13 +68,16 @@ function gug_redesign_page_options( $value, $object_id, $meta_key, $single ) {
 add_filter( 'get_post_metadata', 'gug_redesign_page_options', 10, 4 );
 
 /**
- * Aggiunge la classe body "gug-pattern-page" alle pagine costruite con i pattern GUG.
+ * Aggiunge la classe body "gug-pattern-page" alle pagine costruite con i pattern GUG
+ * e alla "Composizione della Giuria" del redesign (singola designazione).
  *
  * @param string[] $classes Classi del body.
  * @return string[] Classi aggiornate.
  */
 function gug_redesign_pattern_page_body_class( array $classes ): array {
-	if ( is_page() && gug_redesign_is_pattern_page( (int) get_queried_object_id() ) ) {
+	$is_jury = is_singular( 'designazioni' ) && gug_redesign_is_active();
+
+	if ( $is_jury || ( is_page() && gug_redesign_is_pattern_page( (int) get_queried_object_id() ) ) ) {
 		$classes[] = 'gug-pattern-page';
 	}
 

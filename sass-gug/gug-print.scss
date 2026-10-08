@@ -33,3 +33,9 @@ body { background: #fff !important; color: #000; font: 11pt/1.45 "Barlow", Arial
 .gug-datalist__row--head dt, .gug-datalist__row--head dd { background: #dde3ea; font-size: 9pt !important; letter-spacing: .06em; text-transform: uppercase; }
 .gug-datalist__names li + li { margin-top: 1pt; }
 .gug-datalist, .gug-datalist__row { break-inside: avoid; }
+
+/* Il vecchio CSS del tema (css/style.min.css) in stampa forza "* { font-size: 14px !important }":
+   le dimensioni della stampa nuova devono essere !important per prevalere */
+.gug-giuria__org { font-size: 9.5pt !important; }
+.gug-giuria__doc-title { font-size: 18pt !important; }
+.gug-datalist__names li { font-size: 10.5pt !important; }
