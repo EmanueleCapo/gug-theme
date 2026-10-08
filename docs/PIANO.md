@@ -76,3 +76,4 @@ Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
 | Pagina | Vecchia | Bozza nuova | Stato |
 |---|---|---|---|
 | Presentazione | 2 | 5818 | verificata desktop/mobile, blocchi validi |
+| Diventa un Ufficiale Gara | 35 | 5819 | verificata desktop, PDF reali collegati, blocchi validi |

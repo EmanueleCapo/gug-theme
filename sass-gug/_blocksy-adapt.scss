@@ -205,3 +205,11 @@ body.gug-pattern-page { background: var(--gug-white); }
   max-width: none;
   margin-inline: 0;
 }
+
+/* Il vecchio CSS del tema (css/style.min.css) aggiunge una freccia fontello
+   a ogni voce di elenco: nelle pagine nuove gli elenchi sono quelli dell'handoff */
+.gug-pattern-page .entry-content ul li::before { content: none; }
+
+/* ...e toglie i pallini con !important: li ripristiniamo dove l'handoff li prevede */
+.gug-pattern-page .entry-content ul.gug-checklist,
+.gug-pattern-page .entry-content ul:not([class*="gug-"]) { list-style: disc !important; }
