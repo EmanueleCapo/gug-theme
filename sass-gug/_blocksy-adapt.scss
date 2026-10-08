@@ -228,3 +228,12 @@ body.gug-pattern-page { background: var(--gug-white); }
 
 /* Sottotitoli dentro l'accordion (es. Pallanuoto "Maschi"/"Femmine"): non previsti dalla grafica */
 .gug-accordion > .gug-heading { padding-top: 22px; padding-bottom: 0; }
+
+/* Stato vuoto degli shortcode (non previsto dalla grafica) */
+.gug-empty { margin: 0; font-size: var(--gug-fs-body); color: var(--gug-muted); }
+
+/* Blocksy mette un bordo su table/th/td: la grafica ha solo le linee orizzontali */
+.gug-table { border: 0; }
+.gug-table th,
+.gug-table td { border-inline: 0; }
+.gug-table__row td { border-top: 0; }

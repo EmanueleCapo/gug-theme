@@ -83,3 +83,4 @@ Pagine Settore (`/settori/xx/`) = archivio tassonomia `settori`, non pagine.
 | Formazione UG nu / pn / sy | 1553 / 1730 / 1768 | 5822 / 5825 / 5830 | idem |
 
 Conversione documenti: 111 documenti (= pagine attuali), 99 URL verificati. Due link Federnuoto già rotti sulle pagine attuali (Trofeo delle Regioni PN 2025, 404). Tutte le 13 bozze: blocchi validi.
+| Designazioni nu / pn / sa / sy / tu | 1188 / 1221 / 1222 / 1223 / 1224 | 5834 / 5835 / 5836 / 5837 / 5838 | shortcode [elenco-designazioni], verificata nu con ?gug_settimana=20260717 |
