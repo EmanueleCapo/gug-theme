@@ -284,7 +284,8 @@ function gug_redesign_footer_widgets( $instance, $widget, $args ) {
 	if ( ! $printed && 'ct-footer-sidebar-1' === $args['id'] ) {
 		$pattern = WP_Block_Patterns_Registry::get_instance()->get_registered( 'gug/footer-info' );
 		if ( $pattern ) {
-			echo do_blocks( $pattern['content'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup dei blocchi del pattern del tema.
+			// do_shortcode: fuori da the_content gli shortcode del pattern (es. [icone-social]) non verrebbero eseguiti.
+			echo do_shortcode( do_blocks( $pattern['content'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup dei blocchi del pattern del tema.
 		}
 		$printed = true;
 	}
