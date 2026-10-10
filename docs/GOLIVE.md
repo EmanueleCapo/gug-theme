@@ -32,6 +32,7 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 - [ ] Impostazioni → Lettura: homepage = nuova pagina Home.
 - [ ] Menu: ricollegare le voci alle pagine nuove (i menu puntano all'ID) e impostare le classi `gug-sector--xx`.
 - [ ] Header e footer: configurarli nel Customizer di Blocksy come li vedono oggi i loggati (struttura in `modules/redesign-header-footer.php`), poi rimuovere quel modulo. Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
+  - Footer: 3 colonne (marchio, contatti, "Seguici"). Nei social del footer solo Facebook e Instagram: email e telefono sono già nei contatti (oggi lo shortcode `[icone-social]` li esclude in automatico).
 - [ ] Attivare il redesign per tutti (togliere la condizione "solo utenti loggati" per CSS e template).
 - [ ] Svuotare **LiteSpeed Cache** e **Fast Velocity Minify** (e la cache del browser).
 

@@ -3,9 +3,11 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
-  /* Scelta cliente: card della stessa riga tutte alte uguali */
-  align-items: stretch;
+  align-items: start;
 }
+/* Scelta cliente: tutte le card con la stessa altezza minima (una manifestazione su due righe);
+   si allunga solo quella con più contenuto. Su mobile (una per riga) non serve. */
+@media (min-width: 690px) { .gug-event-card { min-height: 175px; } }
 @media (max-width: 999.98px) { .gug-events { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 689.98px) { .gug-events { grid-template-columns: 1fr; gap: 12px; } }
 

@@ -46,9 +46,19 @@ function gug_shortcode_icone_social(): string {
 		return '';
 	}
 
+	// Scelta cliente: email e telefono sono già nella colonna Contatti del footer.
+	$socials = array_values(
+		array_filter(
+			gug_social_icons_list(),
+			static function ( $social ) {
+				return ! in_array( $social['id'] ?? '', array( 'email', 'phone' ), true );
+			}
+		)
+	);
+
 	// Contenitore proprio: la classe ct-social-box di Blocksy non va sovrascritta.
 	return '<div class="gug-social">' . blocksy_social_icons(
-		gug_social_icons_list(),
+		$socials,
 		array(
 			'icons-color'  => 'custom',
 			'type'         => 'simple',
