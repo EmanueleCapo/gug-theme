@@ -36,13 +36,16 @@ function gug_redesign_asset_version( string $relative_path ) {
 }
 
 /**
- * URL dei Google Fonts usati dal redesign (Barlow e Barlow Condensed).
+ * Disattiva il caricamento dei Google Fonts da CDN di Blocksy quando il redesign è attivo:
+ * Barlow e Barlow Condensed sono serviti in locale dal tema figlio (sass-gug/_fonts.scss).
  *
- * @return string URL del foglio di stile Google Fonts.
+ * @param bool $use_remote Valore di Blocksy (true = carica da fonts.googleapis.com).
+ * @return bool False se il redesign è attivo.
  */
-function gug_redesign_fonts_url(): string {
-	return 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap';
+function gug_redesign_disable_remote_fonts( $use_remote ) {
+	return gug_redesign_is_active() ? false : $use_remote;
 }
+add_filter( 'blocksy:typography:google:use-remote', 'gug_redesign_disable_remote_fonts', 10 );
 
 /**
  * Carica font e fogli di stile del redesign nel frontend.
@@ -57,12 +60,10 @@ function gug_redesign_enqueue_assets() {
 		return;
 	}
 
-	wp_enqueue_style( 'gug-fonts', gug_redesign_fonts_url(), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts non accetta versioni.
-
 	wp_enqueue_style(
 		'gug-redesign',
 		get_stylesheet_directory_uri() . '/css/gug.min.css',
-		array( 'gug', 'gug-fonts' ),
+		array( 'gug' ),
 		gug_redesign_asset_version( 'css/gug.min.css' )
 	);
 
@@ -143,6 +144,6 @@ add_action( 'init', 'gug_redesign_refresh_pattern_cache', 1 );
  */
 function gug_redesign_editor_styles() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style( array( gug_redesign_fonts_url(), 'css/gug.min.css' ) );
+	add_editor_style( 'css/gug.min.css' );
 }
 add_action( 'after_setup_theme', 'gug_redesign_editor_styles', 20 );
