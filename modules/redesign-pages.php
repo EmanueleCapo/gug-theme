@@ -23,7 +23,7 @@ function gug_redesign_is_pattern_page( int $post_id ): bool {
 
 	return $post
 		&& 'page' === $post->post_type
-		&& false !== strpos( $post->post_content, 'gug-hero' );
+		&& ( false !== strpos( $post->post_content, 'gug-hero' ) || false !== strpos( $post->post_content, 'gug-page-hero' ) );
 }
 
 /**

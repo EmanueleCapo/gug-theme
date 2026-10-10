@@ -24,14 +24,19 @@ const GUG_REDESIGN_SECTORS = array( 'nu', 'pn', 'sa', 'sy', 'tu' );
 /**
  * Indica se applicare le modifiche a header e footer nella richiesta corrente.
  *
- * Esclude admin, Customizer, AJAX e REST per non toccare il salvataggio delle opzioni.
+ * Esclude admin, la finestra di anteprima del Customizer, AJAX e REST per non toccare
+ * il salvataggio delle opzioni. L'anteprima di una bozza del Customizer aperta nel
+ * frontend (?customize_changeset_uuid=… senza canale del Customizer) è invece inclusa.
  *
  * @return bool True se si è nel frontend con redesign attivo.
  */
 function gug_redesign_is_frontend(): bool {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- sola lettura del contesto di anteprima.
+	$in_customizer_frame = is_customize_preview() && isset( $_GET['customize_messenger_channel'] );
+
 	return gug_redesign_is_active()
 		&& ! is_admin()
-		&& ! is_customize_preview()
+		&& ! $in_customizer_frame
 		&& ! wp_doing_ajax()
 		&& ! ( defined( 'REST_REQUEST' ) && REST_REQUEST );
 }

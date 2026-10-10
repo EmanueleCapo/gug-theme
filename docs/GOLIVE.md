@@ -33,6 +33,8 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 - [ ] Menu: ricollegare le voci alle pagine nuove (i menu puntano all'ID) e impostare le classi `gug-sector--xx`.
 - [ ] Header e footer: configurarli nel Customizer di Blocksy come li vedono oggi i loggati (struttura in `modules/redesign-header-footer.php`), poi rimuovere quel modulo. Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
   - Footer: 3 colonne (marchio, contatti, "Seguici"). Nei social del footer solo Facebook e Instagram: email e telefono sono già nei contatti (oggi lo shortcode `[icone-social]` li esclude in automatico).
+- [ ] Customizer: pubblicare la bozza (changeset `09d956e9-8d6c-4300-a708-147a9e851fc7`) con tipografia Barlow/Barlow Condensed, colore testo e link. La palette (13 colori, settori = colori 9-13) è già pubblicata.
+- [ ] Font: il filtro `blocksy:typography:google:use-remote` deve restituire false per tutti (non solo per i loggati), così Barlow resta servito in locale dal tema figlio.
 - [ ] Attivare il redesign per tutti (togliere la condizione "solo utenti loggati" per CSS e template).
 - [ ] Svuotare **LiteSpeed Cache** e **Fast Velocity Minify** (e la cache del browser).
 
