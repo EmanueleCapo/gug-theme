@@ -19,7 +19,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"className":"gug-footer__text"} -->
-<p class="gug-footer__text">Gruppo Ufficiali Gara della Federazione Italiana Nuoto — Comitato Regionale Piemonte e Valle d'Aosta.</p>
+<p class="gug-footer__text">Gruppo Ufficiali Gara della Federazione Italiana Nuoto<br>Comitato Regionale Piemonte e Valle d'Aosta</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -35,5 +35,15 @@
 <!-- wp:paragraph {"className":"gug-footer__text"} -->
 <p class="gug-footer__text">Segreteria: mercoledì dalle 19.00 alle 22.30</p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"gug-footer__col gug-footer__col--social","layout":{"type":"default"}} -->
+<div class="wp-block-group gug-footer__col gug-footer__col--social"><!-- wp:paragraph {"className":"gug-footer__title"} -->
+<p class="gug-footer__title">Seguici</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[icone-social]
+<!-- /wp:shortcode --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

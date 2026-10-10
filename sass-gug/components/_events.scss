@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
-  align-items: start;
+  /* Scelta cliente: card della stessa riga tutte alte uguali */
+  align-items: stretch;
 }
 @media (max-width: 999.98px) { .gug-events { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 689.98px) { .gug-events { grid-template-columns: 1fr; gap: 12px; } }
@@ -13,7 +14,8 @@
   color: var(--gug-ink);
   border-radius: var(--gug-radius-lg);
   box-shadow: var(--gug-shadow);
-  padding: 26px 22px 22px;
+  /* Scelta cliente: padding laterale ridotto (era 22px) perché i titoli stiano su una riga */
+  padding: 26px 16px 20px;
   position: relative;
   overflow: hidden;
 }

@@ -1,5 +1,10 @@
 /* 15. Footer info (pattern gug/footer-info in un widget Blocksy) --------- */
-.gug-footer { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; font-family: var(--gug-font-body); color: var(--gug-ink); }
+/* Scelta cliente: 3 colonne (marchio, contatti, social). Tablet: marchio su tutta la riga, poi contatti e social. */
+.gug-footer { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 56px; font-family: var(--gug-font-body); color: var(--gug-ink); }
+@media (max-width: 999.98px) {
+  .gug-footer { grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+  .gug-footer > :first-child { grid-column: 1 / -1; }
+}
 @media (max-width: 689.98px) { .gug-footer { grid-template-columns: 1fr; gap: 26px; } }
 .gug-brand { display: flex; align-items: center; gap: 18px; margin: 0 0 14px; }
 .gug-brand__logo { margin: 0; flex: 0 0 auto; }
@@ -13,3 +18,16 @@
   .gug-brand__logo img { height: 52px; }
   .gug-brand__name { font-size: 21px; }
 }
+
+/* Icone social (shortcode [icone-social], markup di Blocksy) */
+.gug-social p { margin: 0; }
+.gug-social .ct-social-box { display: flex; flex-wrap: wrap; gap: 10px; --items-spacing: 0px; }
+.gug-social .ct-social-box a {
+  --theme-icon-size: 18px; --theme-icon-color: currentColor; --theme-icon-hover-color: currentColor;
+  display: grid; place-items: center; width: 44px; height: 44px; margin: 0;
+  border-radius: 14px; background: var(--gug-surface); color: var(--gug-blue-700);
+  transition: background-color .15s, color .15s;
+}
+.gug-social .ct-social-box a:hover,
+.gug-social .ct-social-box a:focus-visible { background: var(--gug-blue-700); color: var(--gug-white); }
+.gug-social .ct-social-box svg { width: 18px; height: 18px; fill: currentColor; }
