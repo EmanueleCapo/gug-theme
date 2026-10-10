@@ -11,4 +11,26 @@
 /* Negli archivi Blocksy limita l'articolo alla larghezza del contenitore (nelle pagine no):
    l'articolo deve essere a tutta larghezza perché hero e sezioni vadano da bordo a bordo,
    il contenuto si allinea poi da solo con il layout "constrained" dei blocchi. */
-.gug-sector-archive { width: 100%; max-width: none; }
+.ct-container-full > .gug-sector-archive { width: 100%; max-width: none; }
+
+/* Card delle pagine del settore — markup PHP dello shortcode [risorse-settore] */
+.gug-sector-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 999.98px) { .gug-sector-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+@media (max-width: 689.98px) { .gug-sector-links { grid-template-columns: 1fr; } }
+.gug-sector-links__item {
+  position: relative; display: flex; flex-direction: column; gap: 6px;
+  padding: 26px 22px 22px; border: 1px solid var(--gug-line); border-radius: var(--gug-radius-lg);
+  background: var(--gug-white); color: var(--gug-ink); text-decoration: none; overflow: hidden;
+  transition: border-color .15s, box-shadow .15s;
+}
+.gug-sector-links__item::before { content: ""; position: absolute; inset: 0 0 auto; height: 6px; background: var(--gug-sector); }
+.gug-sector-links__item:hover { border-color: var(--gug-sector); box-shadow: 0 18px 44px rgba(25, 42, 61, .12); }
+.gug-sector-links__title {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: var(--gug-font-display); font-weight: 800; font-size: 26px; line-height: 1; text-transform: uppercase; color: var(--gug-sector-ink);
+}
+.gug-sector-links__title::after {
+  content: ""; flex: 0 0 18px; height: 18px; background: currentColor;
+  -webkit-mask: var(--gug-i-arrow) center / contain no-repeat; mask: var(--gug-i-arrow) center / contain no-repeat;
+}
+.gug-sector-links__text { font-size: 15px; line-height: 1.45; color: var(--gug-muted); }

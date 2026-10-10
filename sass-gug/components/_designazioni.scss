@@ -32,3 +32,7 @@
   .gug-table__row td:has(.gug-table__action) { display: inline-block; width: auto; margin: 10px 18px 0 0; }
   .gug-table__row td:has(.gug-table__action)::before { content: none; }
 }
+
+/* Dentro le sezioni a layout "constrained" la tabella prende la larghezza dei blocchi di Blocksy
+   (la regola width: 100% qui sopra la allargherebbe da bordo a bordo) */
+.is-layout-constrained > .gug-table { width: var(--theme-block-width); max-width: var(--wp--style--global--content-size); }

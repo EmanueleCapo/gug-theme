@@ -16,7 +16,8 @@ if ( function_exists( 'gug_redesign_is_active' ) && gug_redesign_is_active() ) {
 		get_header();
 		// Stessa struttura delle pagine di Blocksy: le larghezze dei blocchi sono definite su .entry-content.
 		echo '<div class="ct-container-full" data-content="normal"><article class="gug-sector-archive"><div class="entry-content is-layout-constrained">';
-		echo do_blocks( '<!-- wp:block {"ref":' . (int) $gug_archive_pattern->ID . '} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup dei blocchi del pattern.
+		// do_shortcode: fuori da the_content gli shortcode del pattern non verrebbero eseguiti.
+		echo do_shortcode( shortcode_unautop( do_blocks( '<!-- wp:block {"ref":' . (int) $gug_archive_pattern->ID . '} /-->' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup dei blocchi del pattern.
 		echo '</div></article></div>';
 		get_footer();
 		return;

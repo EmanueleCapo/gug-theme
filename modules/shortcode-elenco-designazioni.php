@@ -99,6 +99,11 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 	$atts   = shortcode_atts( array( 'settore' => '' ), $atts, 'elenco-designazioni' );
 	$sector = sanitize_key( $atts['settore'] );
 
+	// Senza attributo, nell'archivio di un settore usa il settore aperto (pattern "Archivio settore").
+	if ( '' === $sector && is_tax( 'settori' ) ) {
+		$sector = (string) get_queried_object()->slug;
+	}
+
 	if ( '' === $sector ) {
 		return '';
 	}

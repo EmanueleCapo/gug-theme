@@ -198,7 +198,8 @@ body.gug-redesign {
   --gug-inline: max(var(--gug-gutter), calc((100% - var(--gug-container)) / 2));
 }
 
-body.gug-pattern-page { background: var(--gug-white); }
+/* html davanti: deve vincere anche su body[data-prefix=…] che Blocksy stampa per gli archivi */
+html body.gug-pattern-page { background: var(--gug-white); }
 
 /* Il vecchio CSS del tema (css/style.min.css) aggiunge una freccia fontello a ogni voce
    di elenco e toglie i pallini con !important: nelle pagine nuove valgono gli elenchi nativi.
