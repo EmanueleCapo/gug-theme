@@ -1,12 +1,13 @@
 /* =========================================================================
    Adattamenti di gug-blocksy.css al markup e al CSS dinamico reali di
    Blocksy 2.1.58 (uploads/blocksy/css/global.css generato dal Customizer).
-   Prefisso .gug-redesign: specificità sufficiente a vincere su global.css
+   Prefisso body.gug-redesign: specificità sufficiente a vincere su global.css e sul CSS inline
+   che Blocksy stampa nell'anteprima delle bozze del Customizer
    e attivo solo quando il redesign è attivo.
    Valori misurati sull'anteprima docs/wordpress/preview (desktop 1201px).
    ========================================================================= */
 
-.gug-redesign {
+body.gug-redesign {
 
   /* Header · riga top: settori ----------------------------------------- */
   /* Anche nello stato sticky, dove Blocksy riapplica lo sfondo del Customizer */
@@ -191,7 +192,7 @@
    Larghezze, allineamenti e spaziature delle sezioni sono impostazioni dei blocchi
    (gruppi a tutta larghezza con layout "constrained"). Le variabili qui sotto servono
    solo al markup PHP (template giuria) che usa .gug-section. */
-.gug-redesign {
+body.gug-redesign {
   --gug-container: min(var(--theme-normal-container-max-width, 1290px), 90vw);
   // Ridichiarata: altrimenti erediterebbe il valore calcolato su :root con il vecchio --gug-container
   --gug-inline: max(var(--gug-gutter), calc((100% - var(--gug-container)) / 2));

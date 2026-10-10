@@ -75,9 +75,10 @@ add_filter( 'get_post_metadata', 'gug_redesign_page_options', 10, 4 );
  * @return string[] Classi aggiornate.
  */
 function gug_redesign_pattern_page_body_class( array $classes ): array {
-	$is_jury = is_singular( 'designazioni' ) && gug_redesign_is_active();
+	$is_jury    = is_singular( 'designazioni' ) && gug_redesign_is_active();
+	$is_sector  = is_tax( 'settori' ) && gug_redesign_is_active();
 
-	if ( $is_jury || ( is_page() && gug_redesign_is_pattern_page( (int) get_queried_object_id() ) ) ) {
+	if ( $is_jury || $is_sector || ( is_page() && gug_redesign_is_pattern_page( (int) get_queried_object_id() ) ) ) {
 		$classes[] = 'gug-pattern-page';
 	}
 

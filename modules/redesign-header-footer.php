@@ -269,7 +269,8 @@ function gug_redesign_footer_end() {
 add_action( 'blocksy:footer:after', 'gug_redesign_footer_end', 0 );
 
 /**
- * Sostituisce i widget del footer (aree 1 e 2) con il pattern gug/footer-info.
+ * Sostituisce i widget del footer: aree 1 e 2 con il pattern gug/footer-info,
+ * area 3 (riga dei loghi) con il pattern sincronizzato "Loghi federazioni".
  *
  * Il pattern viene stampato al posto del primo widget dell'area 1; gli altri widget
  * delle aree 1 e 2 non vengono mostrati.
@@ -282,8 +283,17 @@ add_action( 'blocksy:footer:after', 'gug_redesign_footer_end', 0 );
 function gug_redesign_footer_widgets( $instance, $widget, $args ) {
 	static $printed = false;
 
-	if ( ! gug_redesign_is_frontend() || ! in_array( $args['id'] ?? '', array( 'ct-footer-sidebar-1', 'ct-footer-sidebar-2' ), true ) ) {
+	if ( ! gug_redesign_is_frontend() || ! in_array( $args['id'] ?? '', array( 'ct-footer-sidebar-1', 'ct-footer-sidebar-2', 'ct-footer-sidebar-3' ), true ) ) {
 		return $instance;
+	}
+
+	// Riga alta: pattern sincronizzato "Loghi federazioni" al posto del widget con [partner-grid].
+	if ( 'ct-footer-sidebar-3' === $args['id'] ) {
+		$logos = get_page_by_path( 'loghi-federazioni', OBJECT, 'wp_block' );
+		if ( $logos ) {
+			echo do_blocks( '<!-- wp:block {"ref":' . (int) $logos->ID . '} /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup dei blocchi del pattern.
+		}
+		return false;
 	}
 
 	if ( ! $printed && 'ct-footer-sidebar-1' === $args['id'] ) {

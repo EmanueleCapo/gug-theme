@@ -1,0 +1,14 @@
+/* Archivio del settore (/settori/xx/) — eccezione --------------------------
+   L'hero del pattern sincronizzato "Archivio settore" è lo stesso per tutti i settori;
+   il colore dipende dal settore aperto (classe body term-xx), cosa che un blocco non può
+   fare da solo. !important perché la sfumatura del blocco è uno stile inline. */
+.term-nu .gug-sector-hero { background: linear-gradient(165deg, #0d6b3e 0%, var(--theme-palette-color-9) 72%, #5ed397 100%) !important; }
+.term-pn .gug-sector-hero { background: linear-gradient(165deg, #a83309 0%, var(--theme-palette-color-10) 72%, #ff9d7a 100%) !important; }
+.term-sa .gug-sector-hero { background: linear-gradient(165deg, #6e5b00 0%, var(--theme-palette-color-11) 72%, #e8cf5a 100%) !important; }
+.term-sy .gug-sector-hero { background: linear-gradient(165deg, #7c1010 0%, var(--theme-palette-color-12) 72%, #e06a6a 100%) !important; }
+.term-tu .gug-sector-hero { background: linear-gradient(165deg, #5b3d94 0%, var(--theme-palette-color-13) 72%, #c4aee8 100%) !important; }
+
+/* Negli archivi Blocksy limita l'articolo alla larghezza del contenitore (nelle pagine no):
+   l'articolo deve essere a tutta larghezza perché hero e sezioni vadano da bordo a bordo,
+   il contenuto si allinea poi da solo con il layout "constrained" dei blocchi. */
+.gug-sector-archive { width: 100%; max-width: none; }
