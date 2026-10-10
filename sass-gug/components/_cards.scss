@@ -1,26 +1,8 @@
-/* 8. Card con elenco link (Calendari) ------------------------------------ */
-/* Scelta cliente: card sempre della stessa larghezza, gli spazi in fondo restano vuoti.
-   5 colonne da 1200px, 3 tra 1000 e 1199px, 2 tra 690 e 999px, 1 sotto 690px (breakpoint Blocksy). */
-.gug-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-@media (max-width: 1199.98px) { .gug-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 999.98px) { .gug-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
-@media (max-width: 689.98px) { .gug-cards { grid-template-columns: 1fr; } }
-
-.gug-card {
-  position: relative;
-  border: 1px solid var(--gug-line);
-  border-radius: var(--gug-radius-lg);
-  padding: 26px 18px 18px;
-  overflow: hidden;
-  background: var(--gug-white);
-}
-.gug-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 6px; background: var(--gug-sector, var(--gug-blue-700)); }
-.gug-card__title {
-  font-family: var(--gug-font-display); font-weight: 700; font-size: 24px; line-height: 1;
-  color: var(--gug-sector-ink, var(--gug-ink));
-  margin: 0 0 6px; padding-bottom: 14px; border-bottom: 2px solid var(--gug-line);
-}
-@media (max-width: 999.98px) {
-  .gug-card { padding: 28px 24px 22px; }
-  .gug-card__title { font-size: 28px; }
+/* 8. Calendari — eccezione alla griglia nativa ----------------------------
+   La griglia (5 colonne desktop, 2 tablet, 1 mobile), le card (bordo superiore nel
+   colore del settore, bordi, raggi, padding) e i titoli sono impostazioni dei blocchi.
+   Scelta cliente: tra 1000 e 1199px 3 colonne. WordPress ha solo i breakpoint
+   tablet/mobile, quindi questa fascia intermedia va gestita qui. */
+@media (min-width: 1000px) and (max-width: 1199.98px) {
+  .gug-pattern-page .gug-cards.is-layout-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

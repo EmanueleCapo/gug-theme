@@ -38,5 +38,6 @@
 .gug-doclist a[href*="youtu.be"]::before { background: var(--gug-blue-700); -webkit-mask-image: var(--gug-i-video); mask-image: var(--gug-i-video); }
 .gug-doclist__static::before { -webkit-mask-image: var(--gug-i-id); mask-image: var(--gug-i-id); }
 
-.gug-checklist { margin: 0; padding-left: 22px; font-size: var(--gug-fs-body); line-height: 1.65; color: var(--gug-ink-2); }
-.gug-checklist li + li { margin-top: 10px; }
+/* Elenchi documenti e link: niente sottolineatura (prima veniva da .gug-section a) */
+.gug-doclist a,
+.gug-linklist a { text-decoration: none; }

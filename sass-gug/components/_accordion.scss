@@ -1,11 +1,8 @@
-/* 10. Accordion — core/details ------------------------------------------ */
-.gug-accordion {
-  border: 1px solid var(--gug-line);
-  border-radius: var(--gug-radius-lg);
-  background: var(--gug-white);
-  overflow: hidden;
-}
-.gug-accordion + .gug-accordion { margin-top: 16px; }
+/* 10. Accordion — core/details --------------------------------------------
+   Bordo, raggio e sfondo sono impostazioni del blocco Dettagli. Qui restano le parti
+   che il blocco non permette di impostare: aspetto del titolo (summary), icona +/−,
+   linea sotto il titolo quando è aperto e rientro del contenuto. */
+.gug-accordion { overflow: hidden; }
 .gug-accordion > summary {
   list-style: none; cursor: pointer;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -20,7 +17,3 @@
 .gug-accordion[open] > summary { border-bottom: 1px solid var(--gug-line); }
 .gug-accordion[open] > summary::after { background-image: var(--gug-i-minus); }
 .gug-accordion > :not(summary) { margin: 0; padding: 6px 24px 14px; }
-.gug-accordion > .gug-accordion__label {
-  padding-bottom: 0; padding-top: 18px;
-  font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gug-muted);
-}

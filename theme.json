@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "barlow",
+					"name": "Barlow",
+					"fontFamily": "Barlow, system-ui, sans-serif"
+				},
+				{
+					"slug": "barlow-condensed",
+					"name": "Barlow Condensed",
+					"fontFamily": "\"Barlow Condensed\", Barlow, system-ui, sans-serif"
+				}
+			]
+		}
+	}
+}

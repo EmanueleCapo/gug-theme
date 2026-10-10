@@ -187,10 +187,10 @@
   }
 }
 
-/* Pagine costruite con i pattern GUG ------------------------------------
-   Le sezioni vanno a tutta larghezza (il layout "constrained" di Gutenberg
-   le limiterebbe alla content-size) e allineano il contenuto al contenitore
-   di Blocksy (90vw, max --theme-normal-container-max-width). */
+/* Pagine del redesign ----------------------------------------------------
+   Larghezze, allineamenti e spaziature delle sezioni sono impostazioni dei blocchi
+   (gruppi a tutta larghezza con layout "constrained"). Le variabili qui sotto servono
+   solo al markup PHP (template giuria) che usa .gug-section. */
 .gug-redesign {
   --gug-container: min(var(--theme-normal-container-max-width, 1290px), 90vw);
   // Ridichiarata: altrimenti erediterebbe il valore calcolato su :root con il vecchio --gug-container
@@ -199,37 +199,20 @@
 
 body.gug-pattern-page { background: var(--gug-white); }
 
-.gug-pattern-page .entry-content > .gug-hero,
-.gug-pattern-page .entry-content > .gug-section {
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-}
-
-/* Il vecchio CSS del tema (css/style.min.css) aggiunge una freccia fontello
-   a ogni voce di elenco: nelle pagine nuove gli elenchi sono quelli dell'handoff */
+/* Il vecchio CSS del tema (css/style.min.css) aggiunge una freccia fontello a ogni voce
+   di elenco e toglie i pallini con !important: nelle pagine nuove valgono gli elenchi nativi.
+   Da eliminare insieme al vecchio CSS dopo il go-live. */
 .gug-pattern-page .entry-content ul li::before { content: none; }
 
-/* ...e toglie i pallini con !important: li ripristiniamo dove l'handoff li prevede */
-.gug-pattern-page .entry-content ul.gug-checklist,
 .gug-pattern-page .entry-content ul.gug-event-card__list,
 .gug-pattern-page .entry-content ul:not([class*="gug-"]):not(.wp-block-post-template) { list-style: disc !important; }
 
-/* Blocksy imposta line-height 1.65 sul body: la grafica è disegnata con l'interlinea
-   predefinita del browser (prose, checklist e box dichiarano la propria) */
-.gug-pattern-page .entry-content > .gug-hero,
-.gug-pattern-page .entry-content > .gug-section { line-height: normal; }
-
-/* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nelle griglie la spaziatura è il gap */
-.gug-pattern-page .gug-cards > *,
+/* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nell'elenco news la spaziatura è il gap */
 .gug-pattern-page .gug-newslist .wp-block-post-template > * { margin-block: 0; }
 
 /* Blocksy dà margin-block-end (--theme-content-spacing) ai figli dei layout "flow":
    il summary dell'accordion staccherebbe l'elenco dal titolo */
 .gug-pattern-page .gug-accordion > summary { margin-block: 0; }
-
-/* Sottotitoli dentro l'accordion (es. Pallanuoto "Maschi"/"Femmine"): non previsti dalla grafica */
-.gug-accordion > .gug-heading { padding-top: 22px; padding-bottom: 0; }
 
 /* Stato vuoto degli shortcode (non previsto dalla grafica) */
 .gug-empty { margin: 0; font-size: var(--gug-fs-body); color: var(--gug-muted); }

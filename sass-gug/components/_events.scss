@@ -42,3 +42,5 @@
 .gug-event-card__cta { margin-top: 18px; color: var(--gug-ink); }
 .gug-event-card__cta:hover { color: var(--gug-sector-ink); }
 .gug-event-card__empty { margin: 18px 0 0; font-size: 15px; color: var(--gug-muted); }
+/* Link delle card senza sottolineatura (prima veniva da .gug-hero a) */
+.gug-event-card a { text-decoration: none; }

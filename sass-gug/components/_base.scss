@@ -1,6 +1,7 @@
-/* 2. Base contenuti ------------------------------------------------------- */
-.entry-content > .gug-hero,
-.entry-content > .gug-section { margin-block: 0; }
+/* 2. Base ----------------------------------------------------------------
+   Le pagine usano le impostazioni dei blocchi. Qui restano solo .gug-section e
+   .gug-heading per il template "Composizione della Giuria" (markup PHP) e il link
+   con freccia (icona non impostabile dai blocchi). */
 [class*="gug-"] { box-sizing: border-box; }
 .gug-section a, .gug-hero a { text-decoration: none; }
 
@@ -10,7 +11,6 @@
   font-family: var(--gug-font-body);
   color: var(--gug-ink);
 }
-.gug-section--surface { background: var(--gug-surface); }
 
 .gug-heading {
   font-family: var(--gug-font-display);
@@ -24,12 +24,6 @@
 }
 .gug-heading--sm { font-size: clamp(24px, 2.2vw, 30px); line-height: 1.08; margin-bottom: 16px; }
 
-.gug-prose { font-size: var(--gug-fs-body); line-height: 1.72; color: var(--gug-ink-2); }
-.gug-prose p { margin: 0 0 18px; text-wrap: pretty; }
-.gug-prose p:last-child { margin-bottom: 0; }
-.gug-prose--lead p:first-child { color: var(--gug-ink); font-weight: 600; font-size: var(--gug-fs-lead); }
-.gug-prose--columns { columns: 2; column-gap: 52px; }
-.gug-prose--columns p { break-inside: avoid; }
 
 .gug-arrow-link {
   display: inline-flex; align-items: center; gap: 8px;
