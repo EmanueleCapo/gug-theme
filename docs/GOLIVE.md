@@ -38,6 +38,9 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 - [ ] Attivare il redesign per tutti (togliere la condizione "solo utenti loggati" per CSS e template).
 - [ ] Svuotare **LiteSpeed Cache** e **Fast Velocity Minify** (e la cache del browser).
 
+- [ ] Rank Math: controllare in *Titoli e Meta* che le pagine nuove abbiano titolo SEO, description e parola chiave (già impostati sulle bozze); rigenerare llms.txt e sitemap salvando le impostazioni.
+- [ ] Sostituire Page Links To (usato solo dalla news "Diventa U.G.!") con un reindirizzamento del modulo Reindirizzamenti di Rank Math, poi eliminare il plugin.
+
 ### Subito dopo
 - [ ] Navigazione da utente **non loggato** (finestra anonima): home, calendari, ogni settore, designazioni, singola designazione + stampa, regolamenti, modulistica, formazione, presentazione, 404.
 - [ ] Console del browser senza errori JS; nessun asset 404.
