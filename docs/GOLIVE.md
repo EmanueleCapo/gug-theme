@@ -37,7 +37,7 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
   - widget footer: `block-50` (pattern sincronizzato "Loghi federazioni") e `block-51` (marchio, contatti, Seguici); i vecchi widget spostati tra gli inattivi;
   - menu: classi `gug-sector--xx` sulle voci settore, voce "Gestionale Federnuoto" eliminata dal menu principale.
   Anteprima della versione nativa, senza il modulo: aggiungere `&gug_hf_nativo=1` all'URL di anteprima.
-- [ ] Subito dopo la pubblicazione: rimuovere `modules/redesign-header-footer.php` (e il suo require in `functions.php`). Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
+- [ ] Subito dopo la pubblicazione: rimuovere `modules/redesign-header-footer.php` (i moduli sono caricati in automatico dalla cartella: basta eliminare il file, anche via FTP). Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
 - [ ] Font: il filtro `blocksy:typography:google:use-remote` deve restituire false per tutti (non solo per i loggati), così Barlow resta servito in locale dal tema figlio.
 - [ ] Attivare il redesign per tutti (togliere la condizione "solo utenti loggati" per CSS e template).
 - [ ] Svuotare **LiteSpeed Cache** e **Fast Velocity Minify** (e la cache del browser).
