@@ -77,4 +77,29 @@ body.gug-redesign {
     border-radius: 2px;
     background: var(--gug-sector);
   }
+
+  /* Linee tra le voci principali: Blocksy 2.1.59 salva l'opzione "Divisore voci" del menu
+     mobile (--mobile-menu-divider) ma nessuna sua regola la applica. La usiamo qui, così
+     colore e spessore si cambiano ancora dal Customizer. */
+  #offcanvas .mobile-menu > ul > li + li { border-top: var(--mobile-menu-divider); }
+
+  /* Sottomenu settore aperto: rientro con linea verticale del colore del settore
+     (Blocksy ha un solo colore per tutti i sottomenu) */
+  #offcanvas .mobile-menu > ul > li[class*="gug-sector--"] > .sub-menu {
+    margin-inline-start: 1px;
+    padding-inline-start: 16px;
+    border-inline-start: 2px solid var(--gug-sector);
+  }
+
+  /* Icone social del pannello come quelle del footer: la forma "quadrata" di Blocksy
+     ha angoli fissi a 2px. Colori e dimensione dell'icona sono nel Customizer. */
+  #offcanvas [data-id="socials"] .ct-icon-container {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  /* Pulsante Gestionale a tutta larghezza nel pannello: Blocksy non ha l'opzione */
+  #offcanvas .ct-header-cta,
+  #offcanvas .ct-header-cta .ct-button { width: 100%; }
 }
