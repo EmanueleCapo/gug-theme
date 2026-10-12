@@ -101,6 +101,20 @@ body.gug-redesign {
     border-radius: 14px;
   }
 
+  /* Pulsanti del pannello (chiusura e social) staccati dallo sfondo sfumato:
+     bordo e ombra come le card del sito, opzioni che Blocksy non ha per questi pulsanti.
+     Il colore di fondo resta nel Customizer. */
+  #offcanvas [data-id="socials"] .ct-icon-container {
+    border: 1px solid var(--gug-line);
+    box-shadow: 0 6px 16px rgba(25, 42, 61, .10);
+  }
+  // Il pulsante di chiusura usa le variabili di Blocksy (le sue regole sono !important)
+  #offcanvas .ct-toggle-close {
+    --toggle-button-border-width: 1px;
+    --toggle-button-border-color: var(--gug-line);
+    --toggle-button-shadow: 0 6px 16px rgba(25, 42, 61, .10);
+  }
+
   /* Pulsante di chiusura grande come l'hamburger (44px): Blocksy ha un padding fisso di 10px.
      Tipo, colori, raggio e dimensione dell'icona sono nel Customizer (Pannello off-canvas). */
   #offcanvas .ct-toggle-close { --toggle-button-padding: 15px; }
