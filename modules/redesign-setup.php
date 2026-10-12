@@ -101,7 +101,9 @@ function gug_redesign_dequeue_legacy_assets() {
 	foreach ( array( 'gug', 'fontello', 'owlcarousel-css' ) as $handle ) {
 		wp_dequeue_style( $handle );
 	}
-	foreach ( array( 'owlcarousel-js', 'main' ) as $handle ) {
+	// Anche gli script di Page Links To (solo link "nuova scheda", non usati) ed Essential Blocks
+	// (nessun suo blocco nelle pagine nuove): caricati su ogni pagina, pesavano sul mobile.
+	foreach ( array( 'owlcarousel-js', 'main', 'page-links-to', 'essential-blocks-blocks-localize' ) as $handle ) {
 		wp_dequeue_script( $handle );
 	}
 
@@ -112,6 +114,26 @@ function gug_redesign_dequeue_legacy_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gug_redesign_dequeue_legacy_assets', 100 );
+
+/**
+ * Precarica i font usati in cima alla pagina (testo, titolo del logo, titolo dell'hero):
+ * senza, il testo si ridisegna quando arriva Barlow e la pagina "salta" (CLS su mobile).
+ *
+ * @return void
+ */
+function gug_redesign_preload_fonts() {
+	if ( ! gug_redesign_is_active() ) {
+		return;
+	}
+
+	foreach ( array( 'barlow-400-latin', 'barlow-condensed-700-latin', 'barlow-condensed-800-latin' ) as $font ) {
+		printf(
+			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+			esc_url( get_stylesheet_directory_uri() . '/assets/fonts/' . $font . '.woff2' )
+		);
+	}
+}
+add_action( 'wp_head', 'gug_redesign_preload_fonts', 1 );
 
 /**
  * Aggiunge la classe body "gug-redesign" quando il redesign è attivo.
