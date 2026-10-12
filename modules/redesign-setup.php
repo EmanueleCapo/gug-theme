@@ -147,3 +147,23 @@ function gug_redesign_editor_styles() {
 	add_editor_style( 'css/gug.min.css' );
 }
 add_action( 'after_setup_theme', 'gug_redesign_editor_styles', 20 );
+
+/**
+ * Impedisce ai visitatori di vedere l'anteprima delle bozze del Customizer.
+ *
+ * WordPress mostra a chiunque abbia il link (?customize_changeset_uuid=…) la bozza del
+ * Customizer: da non loggati la pagina apparirebbe con le etichette dell'editor e senza
+ * gli stili del redesign. Chi non può personalizzare il tema viene rimandato alla pagina normale.
+ *
+ * @return void
+ */
+function gug_redesign_block_public_changeset_preview() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- sola lettura del parametro.
+	if ( is_admin() || ! isset( $_GET['customize_changeset_uuid'] ) || current_user_can( 'customize' ) ) {
+		return;
+	}
+
+	wp_safe_redirect( remove_query_arg( array( 'customize_changeset_uuid', 'customize_autosaved', 'customize_messenger_channel' ) ), 302 );
+	exit;
+}
+add_action( 'init', 'gug_redesign_block_public_changeset_preview', 1 );
