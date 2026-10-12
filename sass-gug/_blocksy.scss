@@ -51,8 +51,10 @@ body.gug-redesign {
   /* Spazio tra logo e titolo: nessuna opzione in Blocksy */
   .ct-header [data-id="logo"].site-branding { column-gap: 14px; }
 
-  /* La tagline contiene un link alla home: prende il colore della tagline */
-  .ct-header [data-id="logo"] .site-description a { color: inherit; }
+  /* Titolo e tagline cliccabili come un unico link (tagline senza link proprio):
+     due link alla home così vicini erano un errore di accessibilità su mobile (touch target). */
+  .ct-header [data-id="logo"] .site-title-container { position: relative; }
+  .ct-header [data-id="logo"] .site-title a::after { content: ""; position: absolute; inset: 0; }
 
   /* Pulsante Gestionale ------------------------------------------------------ */
 
