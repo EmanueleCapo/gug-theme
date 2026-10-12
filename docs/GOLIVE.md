@@ -31,9 +31,13 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 - [ ] Mettere in bozza le pagine vecchie, pubblicare le nuove con titolo e slug corretti.
 - [ ] Impostazioni → Lettura: homepage = nuova pagina Home.
 - [ ] Menu: ricollegare le voci alle pagine nuove (i menu puntano all'ID) e impostare le classi `gug-sector--xx`.
-- [ ] Header e footer: configurarli nel Customizer di Blocksy come li vedono oggi i loggati (struttura in `modules/redesign-header-footer.php`), poi rimuovere quel modulo. Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
-  - Footer: 3 colonne (marchio, contatti, "Seguici"). Nei social del footer solo Facebook e Instagram: email e telefono sono già nei contatti (oggi lo shortcode `[icone-social]` li esclude in automatico).
-- [ ] Customizer: pubblicare la bozza (changeset `09d956e9-8d6c-4300-a708-147a9e851fc7`) con tipografia Barlow/Barlow Condensed, colore testo e link. La palette (13 colori, settori = colori 9-13) è già pubblicata.
+- [ ] Customizer: pubblicare la bozza (changeset `09d956e9-8d6c-4300-a708-147a9e851fc7`). Contiene:
+  - tipografia Barlow/Barlow Condensed, colore testo e link (la palette è già pubblicata);
+  - header (riga settori, logo con titolo e tagline linkata, menu, pulsante Gestionale, niente header trasparente) e footer (riga loghi, colonna unica, copyright);
+  - widget footer: `block-50` (pattern sincronizzato "Loghi federazioni") e `block-51` (marchio, contatti, Seguici); i vecchi widget spostati tra gli inattivi;
+  - menu: classi `gug-sector--xx` sulle voci settore, voce "Gestionale Federnuoto" eliminata dal menu principale.
+  Anteprima della versione nativa, senza il modulo: aggiungere `&gug_hf_nativo=1` all'URL di anteprima.
+- [ ] Subito dopo la pubblicazione: rimuovere `modules/redesign-header-footer.php` (e il suo require in `functions.php`). Gli stili in `sass-gug/_blocksy-adapt.scss` restano validi.
 - [ ] Font: il filtro `blocksy:typography:google:use-remote` deve restituire false per tutti (non solo per i loggati), così Barlow resta servito in locale dal tema figlio.
 - [ ] Attivare il redesign per tutti (togliere la condizione "solo utenti loggati" per CSS e template).
 - [ ] Svuotare **LiteSpeed Cache** e **Fast Velocity Minify** (e la cache del browser).

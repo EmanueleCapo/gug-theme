@@ -33,10 +33,13 @@ const GUG_REDESIGN_SECTORS = array( 'nu', 'pn', 'sa', 'sy', 'tu' );
 function gug_redesign_is_frontend(): bool {
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- sola lettura del contesto di anteprima.
 	$in_customizer_frame = is_customize_preview() && isset( $_GET['customize_messenger_channel'] );
+	// Temporaneo fino al go-live: ?gug_hf_nativo=1 mostra header/footer configurati nel Customizer, senza questo modulo.
+	$native_preview = isset( $_GET['gug_hf_nativo'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 	return gug_redesign_is_active()
 		&& ! is_admin()
 		&& ! $in_customizer_frame
+		&& ! $native_preview
 		&& ! wp_doing_ajax()
 		&& ! ( defined( 'REST_REQUEST' ) && REST_REQUEST );
 }
