@@ -85,6 +85,35 @@ function gug_redesign_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'gug_redesign_enqueue_assets', 20 );
 
 /**
+ * Toglie CSS e JS del vecchio tema (style.min.css, Fontello, Owl Carousel, main.js),
+ * non più usati dalle pagine del redesign: bloccavano il rendering su mobile.
+ *
+ * Verificato con un confronto pixel per pixel su tutte le pagine (12/10/2026). I file restano
+ * nel tema fino alla pulizia: per ripristinarli basta togliere questa funzione.
+ *
+ * @return void
+ */
+function gug_redesign_dequeue_legacy_assets() {
+	if ( ! gug_redesign_is_active() ) {
+		return;
+	}
+
+	foreach ( array( 'gug', 'fontello', 'owlcarousel-css' ) as $handle ) {
+		wp_dequeue_style( $handle );
+	}
+	foreach ( array( 'owlcarousel-js', 'main' ) as $handle ) {
+		wp_dequeue_script( $handle );
+	}
+
+	// Il CSS del redesign dipendeva dal vecchio per l'ordine di caricamento.
+	$style = wp_styles()->query( 'gug-redesign' );
+	if ( $style ) {
+		$style->deps = array();
+	}
+}
+add_action( 'wp_enqueue_scripts', 'gug_redesign_dequeue_legacy_assets', 100 );
+
+/**
  * Aggiunge la classe body "gug-redesign" quando il redesign è attivo.
  *
  * @param string[] $classes Classi del body.
