@@ -1,11 +1,4 @@
-/* 15. Footer info (pattern gug/footer-info in un widget Blocksy) --------- */
-/* Scelta cliente: 3 colonne (marchio, contatti, social). Tablet: marchio su tutta la riga, poi contatti e social. */
-.gug-footer { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 56px; font-family: var(--gug-font-body); color: var(--gug-ink); }
-@media (max-width: 999.98px) {
-  .gug-footer { grid-template-columns: 1fr 1fr; gap: 32px 40px; }
-  .gug-footer > :first-child { grid-column: 1 / -1; }
-}
-@media (max-width: 689.98px) { .gug-footer { grid-template-columns: 1fr; gap: 26px; } }
+/* 15. Footer: 3 widget nelle colonne del Footer Builder di Blocksy (colonne, spaziature e allineamenti nel Customizer). */
 .gug-brand { display: flex; align-items: center; gap: 18px; margin: 0 0 14px; }
 .gug-brand__logo { margin: 0; flex: 0 0 auto; }
 /* .gug-brand in più: per i visitatori LiteSpeed cambia l'ordine del CSS e .wp-block-image img { height: auto } vinceva. */
