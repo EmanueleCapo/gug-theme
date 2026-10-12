@@ -11,6 +11,11 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Go-live 12/10/2026: redesign attivo per tutti. Rollback: impostare a false.
+ */
+const GUG_REDESIGN_LIVE = true;
+
+/**
  * Indica se il redesign è attivo per la richiesta corrente.
  *
  * @return bool True se live per tutti o se l'utente è loggato.
