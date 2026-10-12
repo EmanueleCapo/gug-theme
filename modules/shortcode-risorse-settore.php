@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
  */
 function gug_risorse_settore_sections(): array {
 	return array(
-		array( 'designazioni', __( 'Designazioni', 'gugpiemonte' ), __( 'Giurie e partite della settimana', 'gugpiemonte' ) ),
+		array( 'designazioni', __( 'Designazioni', 'gugpiemonte' ), __( 'Designazioni e giurie della settimana', 'gugpiemonte' ) ),
 		array( 'regolamenti', __( 'Regolamenti', 'gugpiemonte' ), __( 'Norme tecniche e regolamenti di gara', 'gugpiemonte' ) ),
 		array( 'formazione-ufficiali-gara', __( 'Formazione', 'gugpiemonte' ), __( 'Materiali per gli Ufficiali Gara', 'gugpiemonte' ) ),
 		array( 'modulistica', __( 'Modulistica', 'gugpiemonte' ), __( 'Moduli e documenti da scaricare', 'gugpiemonte' ) ),
