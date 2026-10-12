@@ -6,3 +6,15 @@
 @media (min-width: 1000px) and (max-width: 1199.98px) {
   .gug-pattern-page .gug-cards.is-layout-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Barra colorata in cima alle card: con il bordo superiore spesso del blocco la barra
+   seguirebbe gli angoli arrotondati (si incurva ai lati). La grafica la vuole dritta,
+   tagliata dagli angoli: il bordo superiore torna sottile e la barra è uno pseudo-elemento. */
+.gug-cards > [class*="gug-sector--"] {
+  position: relative; overflow: hidden;
+  border-top-width: 1px !important; border-top-color: var(--theme-palette-color-5) !important;
+  padding-top: 27px !important;
+}
+.gug-cards > [class*="gug-sector--"]::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 6px; background: var(--gug-sector);
+}

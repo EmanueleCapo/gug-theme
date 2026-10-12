@@ -111,7 +111,8 @@ function gug_shortcode_elenco_designazioni( $atts ): string {
 	$query = gug_designazioni_week_query( $sector );
 
 	if ( ! $query->have_posts() ) {
-		return '<p class="gug-empty">' . esc_html__( 'Nessuna manifestazione', 'gugpiemonte' ) . '</p>';
+		$empty = 'pn' === $sector ? __( 'Nessuna partita in programma', 'gugpiemonte' ) : __( 'Nessuna manifestazione', 'gugpiemonte' );
+		return '<p class="gug-empty">' . esc_html( $empty ) . '</p>';
 	}
 
 	$is_water_polo = 'pn' === $sector;
