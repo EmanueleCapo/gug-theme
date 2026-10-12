@@ -39,11 +39,8 @@ body.gug-redesign {
      Blocksy non ha un'opzione per nasconderla. */
   .ct-header [data-id="menu-secondary"] > ul > li > a .ct-toggle-dropdown-desktop { display: none; }
 
-  /* Sottomenu settore: ombra della grafica e voci colorate col settore in hover */
-  .ct-header [data-id="menu-secondary"] .sub-menu {
-    overflow: hidden;
-    box-shadow: 0 18px 40px rgba(25, 42, 61, .18);
-  }
+  /* Sottomenu settore: voci colorate col settore in hover (l'ombra è nel Customizer) */
+  .ct-header [data-id="menu-secondary"] .sub-menu { overflow: hidden; }
 
   .ct-header [data-id="menu-secondary"] .sub-menu .ct-menu-link:hover {
     color: var(--gug-sector-ink, var(--gug-blue-700));
