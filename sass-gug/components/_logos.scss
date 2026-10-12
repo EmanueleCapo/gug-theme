@@ -1,11 +1,35 @@
 /* 14. Loghi federazioni — pattern sincronizzato "Loghi federazioni" -------
-   Riga, allineamento, spaziature e dimensioni dei loghi sono impostazioni dei blocchi.
-   Eccezione: su tablet e mobile i loghi si rimpiccioliscono, ma le dimensioni del blocco
-   Immagine non hanno varianti per viewport. */
+   Riga, allineamento, spaziature e dimensioni dei loghi su desktop sono impostazioni dei blocchi.
+   Eccezione: su tablet e mobile servono dimensioni e disposizione diverse, ma il blocco
+   Immagine non ha varianti per viewport e il gruppo non può diventare griglia solo su mobile. */
 .gug-logos .gug-logos__item img { object-fit: contain; }
 /* L'area widget del footer di Blocksy è un contenitore flex: la riga deve occupare tutta la larghezza */
 .ct-footer .gug-logos { width: 100%; }
+
+/* Tablet: tutti e cinque su una riga, più piccoli */
 @media (max-width: 999.98px) {
-  .gug-logos .gug-logos__item img { height: 46px !important; width: auto !important; }
-  .gug-logos .gug-logos__item--tall img { height: 66px !important; }
+  .gug-logos .gug-logos__item img { height: 36px !important; width: auto !important; }
+  .gug-logos .gug-logos__item--tall img { height: 50px !important; }
+}
+
+/* Mobile: griglia ordinata di tessere bianche, 2 per riga; l'ultimo logo su tutta la riga */
+@media (max-width: 689.98px) {
+  .gug-logos {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px !important;
+  }
+  .gug-logos .gug-logos__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    padding: 14px;
+    background: var(--gug-white);
+    border-radius: var(--gug-radius-md);
+  }
+  .gug-logos .gug-logos__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .gug-logos .gug-logos__item a { display: contents; }
+  .gug-logos .gug-logos__item img,
+  .gug-logos .gug-logos__item--tall img { height: auto !important; max-height: 40px; max-width: 100%; width: auto !important; }
 }

@@ -99,6 +99,10 @@ body.gug-redesign {
     border-radius: 14px;
   }
 
+  /* Pulsante di chiusura grande come l'hamburger (44px): Blocksy ha un padding fisso di 10px.
+     Tipo, colori, raggio e dimensione dell'icona sono nel Customizer (Pannello off-canvas). */
+  #offcanvas .ct-toggle-close { --toggle-button-padding: 15px; }
+
   /* Pulsante Gestionale a tutta larghezza nel pannello: Blocksy non ha l'opzione */
   #offcanvas .ct-header-cta,
   #offcanvas .ct-header-cta .ct-button { width: 100%; }
