@@ -45,3 +45,10 @@ html body.gug-pattern-page { background: var(--gug-white); }
 
 /* Card news (Query Loop): Blocksy aggiunge margin-block-end ai figli dei gruppi "flow" */
 .gug-pattern-page .gug-newscard > * { margin-block-end: 0; }
+
+/* Blocco File con anteprima PDF: su mobile WordPress nasconde l'anteprima solo dopo il caricamento
+   (i telefoni non hanno il lettore PDF integrato) e la pagina "salta" di 800px. Nascosta da subito:
+   restano il nome del file con link e il pulsante "Scarica". */
+@media (max-width: 689.98px) {
+  .wp-block-file__embed { display: none; }
+}

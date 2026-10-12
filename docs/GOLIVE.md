@@ -55,6 +55,7 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 - Pagine vecchie in bozza con slug `xxx-old`; home vecchia = ID 1147 (`home-old`).
 - Corretto dopo il controllo da non loggato: percorsi assoluti per i font (il "combina CSS" di LiteSpeed riscriveva male quelli relativi) e logo del footer (ordine del CSS diverso per i visitatori).
 - Permalink risalvati: sitemap e llms.txt di Rank Math rispondevano 404.
+- Dopo il go-live (12/10/2026): vecchi CSS/JS del tema tolti dal frontend, gzip HTML (mu-plugin gug-gzip.php), cache browser 1 anno (web.config), Guest Mode LiteSpeed spento, robots.txt vuoto eliminato (ora lo genera Rank Math con la sitemap), immagine di condivisione predefinita, titoli SEO con suffisso "G.U.G. Piemonte", descrizioni per news e settori, pulsanti in blu scuro (contrasto AA).
 - Da fare: Page Links To → reindirizzamento Rank Math; backup Aruba non eseguito prima (fatto solo lo snapshot).
 
 ### Rollback

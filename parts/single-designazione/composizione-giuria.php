@@ -39,7 +39,7 @@ if ( in_array( $gug_sector, array( 'nu', 'sa' ), true ) ) {
 
 	<div class="gug-section">
 		<header class="gug-giuria__print-header">
-			<img class="gug-giuria__print-logo skip-lazy" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/logo-gug.png' ); ?>" alt="" width="120" height="120" loading="eager" data-no-lazy="1">
+			<img class="gug-giuria__print-logo skip-lazy" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/logo-gug.png' ); ?>" alt="" width="120" height="98" loading="eager" data-no-lazy="1">
 			<p class="gug-giuria__org"><?php esc_html_e( 'FEDERAZIONE ITALIANA NUOTO', 'gugpiemonte' ); ?><br><?php esc_html_e( "Gruppo Ufficiali Gara Piemonte e Valle d'Aosta", 'gugpiemonte' ); ?></p>
 			<p class="gug-giuria__doc-title"><?php esc_html_e( 'Composizione della Giuria', 'gugpiemonte' ); ?></p>
 		</header>
