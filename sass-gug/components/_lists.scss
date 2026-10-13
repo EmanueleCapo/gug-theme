@@ -11,6 +11,8 @@
   -webkit-mask: var(--gug-i-chevron) center / contain no-repeat; mask: var(--gug-i-chevron) center / contain no-repeat;
 }
 .gug-linklist a:hover { color: var(--gug-sector-ink, var(--gug-blue-700)); }
+/* Voce senza link (es. calendario non ancora disponibile): stessa spaziatura, testo non in grassetto */
+.gug-linklist li:not(:has(a)) { padding: 13px 0; font-size: var(--gug-fs-body); color: var(--gug-ink); }
 
 /* Documenti: l'icona si decide dall'estensione del link */
 .gug-doclist {
