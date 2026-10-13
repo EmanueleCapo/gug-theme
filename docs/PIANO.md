@@ -52,6 +52,20 @@ Checklist `GOLIVE.md`.
 ### 7. Pulizia
 Moduli, shortcode, SASS vecchi, Owl Carousel, Essential Blocks/Qubely; rinomina dei file nuovi.
 
+### 8. Hero nativo di Blocksy per le pagine (programmato dopo la pulizia)
+Obiettivo: niente più blocco hero dentro il contenuto; l'hero lo genera Blocksy dal titolo della pagina,
+come già per le news (Personalizza → Articoli singoli). Stile modificabile da un solo punto.
+1. **Prima:** foto degli stili calcolati e screenshot (desktop 1280, S20 360) di tutte le 22 pagine, da visitatore con User-Agent Android.
+2. **Customizer → Pagine:** hero tipo 2, a tutta larghezza, titolo a sinistra, Barlow Condensed 800 maiuscolo (72/56/42 come l'H1),
+   padding 44/52 (mobile 26/32), sfondo sfumato blu (quello di Calendari/Presentazione) come predefinito.
+3. **Colore per settore:** nelle opzioni di pagina di Blocksy (editor → Blocksy → Hero) sfondo sfumato del settore
+   (nuoto verde, pallanuoto arancio, salvamento giallo, artistico rosso, tuffi viola: stessi gradienti degli hero attuali).
+4. **Contenuti:** togliere il gruppo `gug-page-hero` da ogni pagina dall'editor (blocchi validi); il titolo della pagina diventa l'H1.
+   Attenzione: `gug_redesign_is_pattern_page()` riconosce le pagine dal marcatore `gug-page-hero` → sostituirlo prima
+   (es. con un controllo sul template o su un meta) o le pagine perdono la struttura a tutta larghezza.
+5. **Dopo:** stesso confronto del punto 1 (differenze solo dove previste), controllo H1 unico, Lighthouse a campione.
+6. Togliere dal SASS le regole `.gug-page-hero` non più usate.
+
 ## Inventario produzione (2026-10-08)
 
 WordPress 7.1.3 · Blocksy 2.1.58 · Companion 2.1.58 (free) · Classic Widgets attivo · LiteSpeed attivo (FVM inattivo).
