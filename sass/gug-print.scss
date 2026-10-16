@@ -1,7 +1,6 @@
 /* gug-print.css — stampa "Composizione della Giuria" (A4)
    Caricato solo su single-designazioni, media="print".
-   Il vecchio CSS del tema (css/style.min.css) in stampa forza "* { font-size: 14px !important }":
-   per questo le dimensioni qui sono !important. */
+   Le dimensioni sono !important per prevalere sugli stili di stampa di Blocksy. */
 
 @page { size: A4; margin: 14mm 16mm 16mm; }
 

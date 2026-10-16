@@ -37,7 +37,7 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"className":"gug-promo","layout":{"type":"default"}} -->
 <div class="wp-block-group gug-promo"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gug-promo__media"} -->
-<figure class="wp-block-image size-full gug-promo__media"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/banner-ug.png" alt="Scopri come diventare Ufficiale di Gara"/></figure>
+<figure class="wp-block-image size-full gug-promo__media"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/img/banner-ug.webp" alt="Scopri come diventare Ufficiale di Gara"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3,"className":"gug-promo__title"} -->

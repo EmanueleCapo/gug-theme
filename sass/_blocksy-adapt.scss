@@ -1,5 +1,5 @@
 /* =========================================================================
-   Adattamenti delle pagine del redesign al CSS di Blocksy e al vecchio CSS del tema.
+   Adattamenti delle pagine al CSS di Blocksy.
    Header e footer: vedi _blocksy.scss (solo eccezioni) e il Customizer.
    ========================================================================= */
 
@@ -16,13 +16,6 @@ body.gug-redesign {
 /* html davanti: deve vincere anche su body[data-prefix=…] che Blocksy stampa per gli archivi */
 html body.gug-pattern-page { background: var(--gug-white); }
 
-/* Il vecchio CSS del tema (css/style.min.css) aggiunge una freccia fontello a ogni voce
-   di elenco e toglie i pallini con !important: nelle pagine nuove valgono gli elenchi nativi.
-   Da eliminare insieme al vecchio CSS dopo il go-live. */
-.gug-pattern-page .entry-content ul li::before { content: none; }
-
-.gug-pattern-page .entry-content ul.gug-event-card__list,
-.gug-pattern-page .entry-content ul:not([class*="gug-"]):not(.wp-block-post-template) { list-style: disc !important; }
 
 /* Blocksy aggiunge margin-bottom ai blocchi dei contenuti: nell'elenco news la spaziatura è il gap */
 .gug-pattern-page .gug-newslist .wp-block-post-template > * { margin-block-end: 0; }

@@ -29,12 +29,6 @@ body.gug-redesign {
     background: var(--gug-sector-ink);
   }
 
-  /* Il vecchio CSS del tema colora i link settore con !important (.menu-xx a:hover).
-     Da togliere insieme al vecchio CSS. */
-  .ct-header [data-id="menu-secondary"] > ul > li[class*="gug-sector--"] > a {
-    color: var(--gug-white) !important;
-  }
-
   /* Nessuna freccia sulle voci settore, come nella grafica (il sottomenu resta su hover):
      Blocksy non ha un'opzione per nasconderla. */
   .ct-header [data-id="menu-secondary"] > ul > li > a .ct-toggle-dropdown-desktop { display: none; }
