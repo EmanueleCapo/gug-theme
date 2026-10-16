@@ -65,13 +65,13 @@ Non c'è un ambiente di stage: il redesign si costruisce **direttamente in produ
 4. Svuotare le cache.
 
 ### Dopo qualche giorno senza problemi
-- [ ] Eliminare le pagine vecchie.
-- [ ] Rimuovere moduli e shortcode vecchi, SASS e CSS vecchi, Owl Carousel se non più usato.
-- [ ] Rimuovere la logica "solo utenti loggati" (`gug_redesign_is_active()`) e rinominare i file nuovi con nomi definitivi:
+- [x] Eliminare le pagine vecchie (16/10/2026).
+- [x] Rimuovere moduli e shortcode vecchi, SASS e CSS vecchi, Owl Carousel (16/10/2026, tag git `pre-pulizia-20261016`).
+- [x] Rimuovere la logica "solo utenti loggati" (`gug_redesign_is_active()`) e rinominare i file nuovi con nomi definitivi (16/10/2026):
   - `modules/redesign-setup.php` → `modules/theme-assets.php`
   - `modules/redesign-pages.php` → `modules/page-options.php`
   - `modules/redesign-header-footer.php` → rimosso (header/footer configurati nel Customizer)
   - `sass-gug/` → `sass/` (dopo aver eliminato il SASS vecchio), `_blocksy-adapt.scss` → `_blocksy.scss` unito
   - prefisso funzioni `gug_redesign_*` → `gug_*`
-- [ ] Disattivare/eliminare Essential Blocks e Qubely se non più usati da nessun contenuto.
+- [x] Disattivare/eliminare Essential Blocks e Qubely (16/10/2026). Page Links To resta finché la news "Diventa U.G.!" è in bozza.
 - [ ] Valutare informativa privacy/cookie (non prevista nel mockup).
