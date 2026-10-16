@@ -16,7 +16,7 @@ functions.php            carica tutti i moduli di /modules
 modules/
   theme-assets.php       CSS (css/gug.min.css, stampa giuria), font locali + preload, classi body,
                          categorie pattern, blocco anteprima Customizer per i visitatori
-  page-options.php       opzioni Blocksy delle pagine con hero GUG (riconosciute da "gug-page-hero")
+  page-options.php       opzioni Blocksy di tutte le pagine; classe body gug-page-sector-xx (colore hero)
   pre-get-posts.php      archivio settore: news pubblicate della stagione in corso (loop ereditato)
   seo-schema.php         JSON-LD di Rank Math senza autore personale
   shortcode-elenco-designazioni.php    [elenco-designazioni settore=""]
@@ -44,6 +44,9 @@ La versione dei file è `filemtime()`: dopo il caricamento non serve svuotare la
 ## Da sapere
 - Produzione su Aruba Windows/IIS: deploy via FTP (lftp), niente cache pagine di LiteSpeed (solo ottimizzazione).
   LiteSpeed "Rimuovi query string" deve restare spento.
+- Hero di pagine e news: nativo di Blocksy (Personalizza → Pagine / Articoli singoli), stessi valori.
+  Pagine di settore: sfumatura del settore da sass/components/_sector-archive.scss. La Home ha l'hero
+  nel contenuto (gruppo "gug-page-hero"), che spegne quello di Blocksy.
 - Header, footer, menu mobile, news singole: tutto nel Customizer di Blocksy. Prima di salvare il Customizer
   ricaricarlo, altrimenti riscrive l'header con valori vecchi.
 - Footer: 3 widget a blocchi (block-52/53/54) + riga loghi (pattern sincronizzato "Loghi federazioni").

@@ -52,7 +52,10 @@ Checklist `GOLIVE.md`.
 ### 7. Pulizia
 Moduli, shortcode, SASS vecchi, Owl Carousel, Essential Blocks/Qubely; rinomina dei file nuovi.
 
-### 8. Hero nativo di Blocksy per le pagine (programmato dopo la pulizia)
+### 8. Hero nativo di Blocksy per le pagine — FATTO 16/10/2026
+Fatto: Customizer Pagine = Articoli singoli (padding 44/52, mobile 26/32), gruppo hero tolto da 21 pagine
+(Home esclusa), confronto screenshot: desktop identico, mobile identico salvo antialiasing.
+
 Obiettivo: niente più blocco hero dentro il contenuto; l'hero lo genera Blocksy dal titolo della pagina,
 come già per le news (Personalizza → Articoli singoli). Stile modificabile da un solo punto.
 1. **Prima:** foto degli stili calcolati e screenshot (desktop 1280, S20 360) di tutte le 22 pagine, da visitatore con User-Agent Android.
