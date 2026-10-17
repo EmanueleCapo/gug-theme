@@ -45,3 +45,8 @@ html body.gug-pattern-page { background: var(--gug-white); }
 @media (max-width: 689.98px) {
   .wp-block-file__embed { display: none; }
 }
+/* Su desktop è il contrario: l'anteprima parte con l'attributo hidden e compare dopo il caricamento
+   dello script, spingendo giù il resto della pagina. Spazio riservato da subito (invisibile finché hidden). */
+@media (min-width: 690px) {
+  .wp-block-file__embed[hidden] { display: block; visibility: hidden; }
+}
